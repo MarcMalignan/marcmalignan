@@ -1,0 +1,11 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": ["airbnb-typescript"],
+  "rules": {
+    "import/prefer-default-export": 0
+  }
+}
