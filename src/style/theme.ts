@@ -1,20 +1,35 @@
 import baseStyled, { ThemedStyledInterface } from 'styled-components';
 
 const colors = {
-  background: '#eee',
-  fontColor: '#222',
+  accent: '#fa7268',
+  background: '#fafafa',
+  fontPrimary: '#222',
+  separator: '#444',
+  shadow: 'rgba(0, 0, 0, 0.2)',
+};
+
+const fonts = {
+  title: "'Josefin Slab', serif",
+  text: "'Open Sans', sans-serif",
 };
 
 const spacings = {
-  small: '10px',
-  medium: '20px',
-  big: '30px',
+  small: '15px',
+  medium: '30px',
+  large: '45px',
+  huge: '90px',
+};
+
+const speeds = {
+  normal: '.3s',
 };
 
 export const appTheme = {
   colors,
+  fonts,
   spacings,
+  speeds,
 };
 
-type AppTheme = typeof appTheme;
-export const styled = baseStyled as ThemedStyledInterface<AppTheme>;
+export type TAppTheme = typeof appTheme;
+export const styled = baseStyled as ThemedStyledInterface<TAppTheme>;

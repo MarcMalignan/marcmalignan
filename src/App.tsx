@@ -1,22 +1,27 @@
 import React, { FC } from 'react';
 import { ThemeProvider } from 'styled-components';
-
+import { Content } from './components/Content';
+import { Footer } from './components/Footer';
 import { Header } from './components/Header';
-import { appTheme, styled } from './style/theme';
 import { GlobalStyle } from './style/GlobalStyle';
+import { appTheme, styled } from './style/theme';
 
 export const App: FC<{}> = () => (
   <ThemeProvider theme={appTheme}>
     <AppContainer>
-      <GlobalStyle />
+      <GlobalStyle theme={appTheme} />
       <Header />
+      <Content />
+      <Footer />
     </AppContainer>
   </ThemeProvider>
 );
 
 const AppContainer = styled.div`
-  padding-top: ${({ theme }) => theme.spacings.big};
-  min-height: 100vh;
+  height: 100vh;
   background: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.fontColor};
+  font-family: ${({ theme }) => theme.fonts.text};
+  color: ${({ theme }) => theme.colors.fontPrimary};
+  border: ${({ theme }) => `${theme.spacings.small} solid ${theme.colors.accent}`};
+  overflow: auto;
 `;
