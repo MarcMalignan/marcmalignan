@@ -6,11 +6,13 @@
   "main": "index.js",
   "dependencies": {
     "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react-dom": "^16.11.0",
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.3",
+    "@types/styled-components": "^4.1.20",
     "@typescript-eslint/eslint-plugin": "^2.6.0",
     "clean-webpack-plugin": "^3.0.0",
     "eslint": "^6.6.0",
@@ -36,7 +38,7 @@
   },
   "scripts": {
     "build": "yarn webpack -p",
-    "check:lint": "yarn eslint --ext .ts,.tsx --color src/",
+    "check:lint": "yarn eslint ./ --color --ext .js,.ts,.tsx --ignore-path .gitignore",
     "check:pretty": "yarn prettier -c ./src/**/*.{ts,tsx}",
     "check:ts": "yarn tsc",
     "start": "webpack-dev-server"
