@@ -1,29 +1,45 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { LANGUAGES } from '../services/language';
 import { styled } from '../style/theme';
 import { ContentWidth } from './commons';
 
-export const Header: FC<{}> = () => (
-  <HeaderContainer>
-    <ContentWidth>
-      <TitleContainer>
-        <Title>
-          <i>M</i>
-          arc
-          <br />
-          <i>M</i>
-          alignan
-        </Title>
-      </TitleContainer>
-      <Nav>
-        <NavItem>Compétences</NavItem>
-        <NavItem>Expérience</NavItem>
-        <NavItem>Contact</NavItem>
-      </Nav>
-    </ContentWidth>
-  </HeaderContainer>
-);
+export const Header: FC<{}> = () => {
+  const { t, i18n } = useTranslation();
+  const changeLanguage = useCallback((language: LANGUAGES) => () => i18n.changeLanguage(language), []);
+
+  return (
+    <HeaderContainer>
+      <ContentWidth>
+        <TitleContainer>
+          <Title>
+            <i>M</i>
+            arc
+            <br />
+            <i>M</i>
+            alignan
+          </Title>
+        </TitleContainer>
+        <Nav>
+          <NavItem>{t('nav.skills')}</NavItem>
+          <NavItem>{t('nav.experience')}</NavItem>
+          <NavItem>{t('nav.contact')}</NavItem>
+        </Nav>
+        <LanguageContainer>
+          <Language active={i18n.language === LANGUAGES.FR} onClick={changeLanguage(LANGUAGES.FR)}>
+            FR
+          </Language>
+          <Language active={i18n.language === LANGUAGES.EN} onClick={changeLanguage(LANGUAGES.EN)}>
+            EN
+          </Language>
+        </LanguageContainer>
+      </ContentWidth>
+    </HeaderContainer>
+  );
+};
 
 const HeaderContainer = styled.div`
+  position: relative;
   box-shadow: ${({ theme }) => `0 0 ${theme.spacings.large} ${theme.colors.shadow}`};
 `;
 
@@ -66,5 +82,27 @@ const NavItem = styled.div`
 
   &:hover {
     color: ${({ theme }) => theme.colors.accent};
+  }
+`;
+
+const LanguageContainer = styled.div`
+  display: flex;
+  position: absolute;
+  top: ${({ theme }) => theme.spacings.small};
+  right: ${({ theme }) => theme.spacings.small};
+`;
+
+const Language = styled.div<{ active?: boolean }>`
+  width: ${({ theme }) => theme.spacings.medium};
+  height: ${({ theme }) => theme.spacings.medium};
+  margin-right: ${({ theme }) => theme.spacings.tiny};
+  line-height: ${({ theme }) => theme.spacings.medium};
+  color: ${({ active, theme }) => (active ? theme.colors.fontSecondary : 'inherit')};
+  background: ${({ active, theme }) => (active ? theme.colors.accent : 'transparent')};
+  text-align: center;
+  cursor: pointer;
+
+  &:last-child {
+    margin-right: 0;
   }
 `;

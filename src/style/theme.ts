@@ -4,6 +4,7 @@ const colors = {
   accent: '#fa7268',
   background: '#fafafa',
   fontPrimary: '#222',
+  fontSecondary: '#fafafa',
   separator: '#444',
   shadow: 'rgba(0, 0, 0, 0.2)',
 };
@@ -14,6 +15,7 @@ const fonts = {
 };
 
 const spacings = {
+  tiny: '5px',
   small: '15px',
   medium: '30px',
   large: '45px',
