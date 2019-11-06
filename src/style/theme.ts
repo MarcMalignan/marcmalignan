@@ -18,8 +18,8 @@ const spacings = {
   tiny: '5px',
   small: '15px',
   medium: '30px',
-  large: '45px',
-  huge: '90px',
+  large: '50px',
+  huge: '100px',
 };
 
 const speeds = {

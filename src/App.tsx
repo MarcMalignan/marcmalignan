@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Content } from './components/Content';
+import { ContentWidth } from './components/commons';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
+import { About } from './sections/About';
+import { Contact } from './sections/Contact';
+import { Experience } from './sections/Experience';
+import { Skills } from './sections/Skills';
 import { initLanguage } from './services/language';
 import { GlobalStyle } from './style/GlobalStyle';
 import { appTheme, styled } from './style/theme';
@@ -19,7 +23,12 @@ export class App extends Component<{}> {
         <AppContainer>
           <GlobalStyle theme={appTheme} />
           <Header />
-          <Content />
+          <ContentContainer>
+            <About />
+            <Skills />
+            <Experience />
+            <Contact />
+          </ContentContainer>
           <Footer />
         </AppContainer>
       </ThemeProvider>
@@ -34,4 +43,9 @@ const AppContainer = styled.div`
   color: ${({ theme }) => theme.colors.fontPrimary};
   border: ${({ theme }) => `${theme.spacings.small} solid ${theme.colors.accent}`};
   overflow: auto;
+`;
+
+const ContentContainer = styled(ContentWidth)`
+  padding-top: ${({ theme }) => theme.spacings.huge};
+  padding-bottom: ${({ theme }) => theme.spacings.huge};
 `;
