@@ -9,14 +9,23 @@ interface ILanguageProps {
 
 export const Language: FC<ILanguageProps> = ({ className }) => {
   const { i18n } = useTranslation();
-  const changeLanguage = useCallback((language: LANGUAGES) => () => i18n.changeLanguage(language), []);
+  const changeLanguage = useCallback(
+    (language: LANGUAGES) => () => i18n.changeLanguage(language),
+    [],
+  );
 
   return (
     <LanguageContainer className={className}>
-      <LanguageButton active={i18n.language === LANGUAGES.FR} onClick={changeLanguage(LANGUAGES.FR)}>
+      <LanguageButton
+        active={i18n.language === LANGUAGES.FR}
+        onClick={changeLanguage(LANGUAGES.FR)}
+      >
         FR
       </LanguageButton>
-      <LanguageButton active={i18n.language === LANGUAGES.EN} onClick={changeLanguage(LANGUAGES.EN)}>
+      <LanguageButton
+        active={i18n.language === LANGUAGES.EN}
+        onClick={changeLanguage(LANGUAGES.EN)}
+      >
         EN
       </LanguageButton>
     </LanguageContainer>
@@ -32,8 +41,10 @@ const LanguageButton = styled.div<{ active?: boolean }>`
   height: ${({ theme }) => theme.spacings.medium};
   margin-right: ${({ theme }) => theme.spacings.tiny};
   line-height: ${({ theme }) => theme.spacings.medium};
-  color: ${({ active, theme }) => (active ? theme.colors.fontSecondary : 'inherit')};
-  background: ${({ active, theme }) => (active ? theme.colors.accent : 'transparent')};
+  color: ${({ active, theme }) =>
+    active ? theme.colors.fontSecondary : 'inherit'};
+  background: ${({ active, theme }) =>
+    active ? theme.colors.accent : 'transparent'};
   text-align: center;
   cursor: pointer;
 

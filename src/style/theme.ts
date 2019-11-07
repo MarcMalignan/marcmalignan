@@ -23,6 +23,7 @@ const spacings = {
 };
 
 const speeds = {
+  fast: '.2s',
   normal: '.3s',
 };
 

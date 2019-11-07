@@ -12,5 +12,6 @@ const FooterContainer = styled.div`
   padding: ${({ theme }) => theme.spacings.large} 0;
   font-size: 0.8em;
   text-align: center;
-  box-shadow: ${({ theme }) => `0 0 ${theme.spacings.large} ${theme.colors.shadow}`};
+  box-shadow: ${({ theme }) =>
+    `0 0 ${theme.spacings.large} ${theme.colors.shadow}`};
 `;

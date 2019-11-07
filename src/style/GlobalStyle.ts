@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/indent */
 import { createGlobalStyle } from 'styled-components';
 import { TAppTheme } from './theme';
 
@@ -26,6 +27,7 @@ export const GlobalStyle = createGlobalStyle<IGlobalStyle>`
   }
   ::-webkit-scrollbar-thumb {
     background: ${({ theme }) => theme.colors.accent};
-    border: ${({ theme }) => `${SCROLLBAR_WIDTH}px solid ${theme.colors.background}`};
+    border: ${({ theme }) =>
+      `${SCROLLBAR_WIDTH}px solid ${theme.colors.background}`};
   }
 `;
