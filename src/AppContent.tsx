@@ -10,8 +10,7 @@ import { Experience } from './sections/Experience';
 import { Skills } from './sections/Skills';
 import { styled } from './style/theme';
 
-const HEADER_HEIGHT = 339;
-
+const DISPLAY_COLLAPSED_HEADER_HEIGHT = 326;
 export const AppContent: FC<{}> = () => {
   const [shouldShowCollapsedHeader, setCollapsedHeader] = useState(false);
 
@@ -19,12 +18,12 @@ export const AppContent: FC<{}> = () => {
     (e: UIEvent<HTMLElement>) => {
       if (
         !shouldShowCollapsedHeader &&
-        e.currentTarget.scrollTop > HEADER_HEIGHT
+        e.currentTarget.scrollTop > DISPLAY_COLLAPSED_HEADER_HEIGHT
       ) {
         setCollapsedHeader(true);
       } else if (
         shouldShowCollapsedHeader &&
-        e.currentTarget.scrollTop < HEADER_HEIGHT
+        e.currentTarget.scrollTop < DISPLAY_COLLAPSED_HEADER_HEIGHT
       ) {
         setCollapsedHeader(false);
       }

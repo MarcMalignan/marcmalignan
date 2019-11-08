@@ -5,8 +5,8 @@ const colors = {
   background: '#fafafa',
   fontPrimary: '#222',
   fontSecondary: '#fafafa',
-  separator: '#444',
-  shadow: 'rgba(0, 0, 0, 0.2)',
+  separator: '#eee',
+  shadow: 'rgba(0, 0, 0, 0.1)',
 };
 
 const fonts = {
@@ -15,10 +15,11 @@ const fonts = {
 };
 
 const spacings = {
+  line: '2px',
   tiny: '5px',
   small: '15px',
   medium: '30px',
-  large: '50px',
+  large: '60px',
   huge: '100px',
 };
 

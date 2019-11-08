@@ -17,7 +17,6 @@ export const Header: FC<{}> = () => (
 
 const HeaderContainer = styled.div`
   position: relative;
-  box-shadow: ${({ theme }) => `0 0 ${theme.spacings.large} ${theme.colors.shadow}`};
 `;
 
 const StyledLanguage = styled(Language)`

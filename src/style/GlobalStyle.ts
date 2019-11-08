@@ -6,7 +6,8 @@ interface IGlobalStyle {
   theme: TAppTheme;
 }
 
-const SCROLLBAR_WIDTH = 5;
+const SCROLLBAR_WIDTH = 2;
+const SCROLLBAR_SPACING = 5;
 
 export const GlobalStyle = createGlobalStyle<IGlobalStyle>`
   * {
@@ -20,7 +21,7 @@ export const GlobalStyle = createGlobalStyle<IGlobalStyle>`
   }
 
   ::-webkit-scrollbar {
-    width: ${SCROLLBAR_WIDTH * 3}px;
+    width: ${SCROLLBAR_WIDTH + SCROLLBAR_SPACING * 2}px;
   }
   ::-webkit-scrollbar-track {
     background: ${({ theme }) => theme.colors.background};
@@ -28,6 +29,6 @@ export const GlobalStyle = createGlobalStyle<IGlobalStyle>`
   ::-webkit-scrollbar-thumb {
     background: ${({ theme }) => theme.colors.accent};
     border: ${({ theme }) =>
-      `${SCROLLBAR_WIDTH}px solid ${theme.colors.background}`};
+      `${SCROLLBAR_SPACING}px solid ${theme.colors.background}`};
   }
 `;

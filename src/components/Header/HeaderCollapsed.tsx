@@ -24,9 +24,11 @@ const HeaderCollapsedContainer = styled.div<{ isDisplayed: boolean }>`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: ${({ theme }) => theme.spacings.small};
+  height: ${({ theme }) => theme.spacings.large};
+  padding: 0 ${({ theme }) => theme.spacings.small};
   background: ${({ theme }) => theme.colors.background};
-  box-shadow: ${({ theme }) => `0 0 ${theme.spacings.large} ${theme.colors.shadow}`};
+  box-shadow: ${({ theme }) =>
+    `0 0 ${theme.spacings.medium} ${theme.colors.shadow}`};
   opacity: ${({ isDisplayed }) => (isDisplayed ? '1' : '0')};
   transition: opacity ${({ theme }) => theme.speeds.fast};
   pointer-events: ${({ isDisplayed }) => (isDisplayed ? 'initial' : 'none')};

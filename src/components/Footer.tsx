@@ -3,15 +3,12 @@ import { styled } from '../style/theme';
 import { ContentWidth } from './commons';
 
 export const Footer: FC<{}> = () => (
-  <FooterContainer>
-    <ContentWidth>Marc Malignan © 2019</ContentWidth>
-  </FooterContainer>
+  <FooterContainer>Marc Malignan © 2019</FooterContainer>
 );
 
-const FooterContainer = styled.div`
-  padding: ${({ theme }) => theme.spacings.large} 0;
+const FooterContainer = styled(ContentWidth)`
   font-size: 0.8em;
   text-align: center;
-  box-shadow: ${({ theme }) =>
-    `0 0 ${theme.spacings.large} ${theme.colors.shadow}`};
+  padding: ${({ theme }) => theme.spacings.medium} 0;
+  border-top: 1px solid ${({ theme }) => theme.colors.separator};
 `;
