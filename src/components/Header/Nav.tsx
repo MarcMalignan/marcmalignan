@@ -1,6 +1,8 @@
-import React, { FC } from 'react';
+import React, { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { AppContext, IAppContext } from '../../services/context';
 import { styled } from '../../style/theme';
+import { ENavItems } from '../../types';
 
 interface INavProps {
   isCollapsed?: boolean;
@@ -14,13 +16,33 @@ export const Nav: FC<INavProps> = ({ isCollapsed = false }) => {
     : NavContainerFull;
   const NavItemElement = isCollapsed ? NavItemCollapsed : NavItemFull;
 
+  const onNavItemClick = useCallback(
+    (context: IAppContext, navItem: ENavItems) => () =>
+      context.setCurrentNav(navItem),
+    [],
+  );
+
+  const renderNavItem = useCallback(
+    (context: IAppContext) => (navItem: ENavItems) => (
+      <NavItemElement
+        key={navItem}
+        isSelected={context.currentNav === navItem}
+        onClick={onNavItemClick(context, navItem)}
+      >
+        {t(`nav.${navItem}`)}
+      </NavItemElement>
+    ),
+    [],
+  );
+
   return (
-    <NavContainerElement>
-      <NavItemElement isSelected>{t('nav.about')}</NavItemElement>
-      <NavItemElement>{t('nav.skills')}</NavItemElement>
-      <NavItemElement>{t('nav.experience')}</NavItemElement>
-      <NavItemElement>{t('nav.contact')}</NavItemElement>
-    </NavContainerElement>
+    <AppContext.Consumer>
+      {context => (
+        <NavContainerElement>
+          {Object.values(ENavItems).map(renderNavItem(context))}
+        </NavContainerElement>
+      )}
+    </AppContext.Consumer>
   );
 };
 

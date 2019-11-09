@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { AppContent } from './AppContent';
+import { AppContextProvider } from './services/context';
 import { initLanguage } from './services/language';
 import { GlobalStyle } from './style/GlobalStyle';
 import { appTheme } from './style/theme';
 
 export class App extends Component<{}> {
-  constructor() {
-    super({});
+  constructor(props: {}) {
+    super(props);
     initLanguage();
   }
 
@@ -15,9 +16,11 @@ export class App extends Component<{}> {
     return (
       <>
         <GlobalStyle theme={appTheme} />
-        <ThemeProvider theme={appTheme}>
-          <AppContent />
-        </ThemeProvider>
+        <AppContextProvider>
+          <ThemeProvider theme={appTheme}>
+            <AppContent />
+          </ThemeProvider>
+        </AppContextProvider>
       </>
     );
   }
