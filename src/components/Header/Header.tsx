@@ -8,8 +8,8 @@ import { Nav } from './Nav';
 export const Header: FC<{}> = () => (
   <HeaderContainer>
     <ContentWidth>
-      <HeaderTitle />
-      <Nav />
+      <StyledHeaderTitle />
+      <StyledNav />
       <StyledLanguage />
     </ContentWidth>
   </HeaderContainer>
@@ -17,6 +17,16 @@ export const Header: FC<{}> = () => (
 
 const HeaderContainer = styled.div`
   position: relative;
+`;
+
+const StyledHeaderTitle = styled(HeaderTitle)`
+  display: flex;
+  justify-content: center;
+`;
+
+const StyledNav = styled(Nav)`
+  justify-content: center;
+  margin: 0 auto;
 `;
 
 const StyledLanguage = styled(Language)`

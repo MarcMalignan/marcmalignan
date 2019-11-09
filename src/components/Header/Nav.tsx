@@ -1,66 +1,56 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC, useCallback, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
-import { AppContext, IAppContext } from '../../services/context';
+import { AppContext } from '../../services/context';
 import { styled } from '../../style/theme';
 import { ENavItems } from '../../types';
 
 interface INavProps {
+  className?: string;
   isCollapsed?: boolean;
 }
 
-export const Nav: FC<INavProps> = ({ isCollapsed = false }) => {
+export const Nav: FC<INavProps> = ({ className, isCollapsed = false }) => {
   const { t } = useTranslation();
-
-  const NavContainerElement = isCollapsed
-    ? NavContainerCollapsed
-    : NavContainerFull;
-  const NavItemElement = isCollapsed ? NavItemCollapsed : NavItemFull;
+  const { currentNav, setCurrentNav } = useContext(AppContext);
 
   const onNavItemClick = useCallback(
-    (context: IAppContext, navItem: ENavItems) => () =>
-      context.setCurrentNav(navItem),
+    (navItem: ENavItems) => () => setCurrentNav(navItem),
     [],
   );
 
   const renderNavItem = useCallback(
-    (context: IAppContext) => (navItem: ENavItems) => (
-      <NavItemElement
-        key={navItem}
-        isSelected={context.currentNav === navItem}
-        onClick={onNavItemClick(context, navItem)}
-      >
-        {t(`nav.${navItem}`)}
-      </NavItemElement>
-    ),
-    [],
+    (navItem: ENavItems) => {
+      const NavItemElement = isCollapsed ? NavItemCollapsed : NavItemFull;
+      return (
+        <NavItemElement
+          key={navItem}
+          isSelected={currentNav === navItem}
+          onClick={onNavItemClick(navItem)}
+        >
+          {t(`nav.${navItem}`)}
+        </NavItemElement>
+      );
+    },
+    [currentNav],
   );
 
   return (
-    <AppContext.Consumer>
-      {context => (
-        <NavContainerElement>
-          {Object.values(ENavItems).map(renderNavItem(context))}
-        </NavContainerElement>
-      )}
-    </AppContext.Consumer>
+    <NavContainer className={className}>
+      {Object.values(ENavItems).map(renderNavItem)}
+    </NavContainer>
   );
 };
 
 const NavContainer = styled.div`
   display: flex;
 `;
-const NavContainerFull = styled(NavContainer)`
-  justify-content: center;
-  margin: 0 auto;
-`;
-const NavContainerCollapsed = styled(NavContainer)``;
 
 const NavItem = styled.div<{ isSelected?: boolean }>`
   font-family: ${({ theme }) => theme.fonts.title};
   font-weight: 600;
   white-space: nowrap;
   cursor: pointer;
-  transition: color ${({ theme }) => theme.speeds.normal};
+  transition: all ${({ theme }) => theme.speeds.normal};
   border-bottom: ${({ theme }) => theme.spacings.line} solid;
   border-color: ${({ isSelected, theme }) =>
     isSelected ? theme.colors.accent : theme.colors.separator};
@@ -87,5 +77,5 @@ const NavItemCollapsed = styled(NavItem)`
   padding: 0 ${({ theme }) => theme.spacings.medium};
   font-size: 1.2em;
   border-color: ${({ isSelected, theme }) =>
-    isSelected ? theme.colors.accent : 'transparent'};
+    isSelected ? theme.colors.accent : theme.colors.background};
 `;

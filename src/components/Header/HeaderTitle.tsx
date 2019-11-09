@@ -3,31 +3,26 @@ import { styled } from '../../style/theme';
 import { ColoredFirstLetter } from '../ColoredFirstLetter';
 
 interface IHeaderTitleProps {
+  className?: string;
   isCollapsed?: boolean;
 }
 
-export const HeaderTitle: FC<IHeaderTitleProps> = ({ isCollapsed = false }) => {
-  const TitleContainerElement = isCollapsed
-    ? TitleContainerCollapsed
-    : TitleContainerFull;
+export const HeaderTitle: FC<IHeaderTitleProps> = ({
+  className,
+  isCollapsed = false,
+}) => {
   const TitleElement = isCollapsed ? TitleCollapsed : TitleFull;
 
   return (
-    <TitleContainerElement>
+    <div className={className}>
       <TitleElement>
         <ColoredFirstLetter label="Marc" />
         {isCollapsed ? ' ' : <br />}
         <ColoredFirstLetter label="Malignan" />
       </TitleElement>
-    </TitleContainerElement>
+    </div>
   );
 };
-
-const TitleContainerFull = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-const TitleContainerCollapsed = styled.div``;
 
 const Title = styled.h1`
   margin: 0;

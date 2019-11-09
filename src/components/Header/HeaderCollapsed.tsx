@@ -10,8 +10,8 @@ interface IHeaderCollapsedProps {
 
 export const HeaderCollapsed: FC<IHeaderCollapsedProps> = ({ isDisplayed }) => (
   <HeaderCollapsedContainer isDisplayed={isDisplayed}>
-    <HeaderTitle isCollapsed />
-    <Nav isCollapsed />
+    <StyledHeaderTitle isCollapsed />
+    <StyledNav isCollapsed />
     <Language />
   </HeaderCollapsedContainer>
 );
@@ -32,4 +32,12 @@ const HeaderCollapsedContainer = styled.div<{ isDisplayed: boolean }>`
   opacity: ${({ isDisplayed }) => (isDisplayed ? '1' : '0')};
   transition: opacity ${({ theme }) => theme.speeds.fast};
   pointer-events: ${({ isDisplayed }) => (isDisplayed ? 'initial' : 'none')};
+`;
+
+const StyledHeaderTitle = styled(HeaderTitle)`
+  flex-grow: 1;
+`;
+
+const StyledNav = styled(Nav)`
+  margin-right: ${({ theme }) => theme.spacings.large};
 `;
