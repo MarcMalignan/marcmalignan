@@ -4,23 +4,17 @@ import { HeaderTitle } from './HeaderTitle';
 import { Language } from './Language';
 import { Nav } from './Nav';
 
-interface IHeaderCollapsedProps {
-  isDisplayed: boolean;
-}
-
-export const HeaderCollapsed: FC<IHeaderCollapsedProps> = ({ isDisplayed }) => (
-  <HeaderCollapsedContainer isDisplayed={isDisplayed}>
+export const StickyHeader: FC<{}> = () => (
+  <StickyHeaderContainer>
     <StyledHeaderTitle isCollapsed />
     <StyledNav isCollapsed />
     <Language />
-  </HeaderCollapsedContainer>
+  </StickyHeaderContainer>
 );
 
-const HeaderCollapsedContainer = styled.div<{ isDisplayed: boolean }>`
-  position: fixed;
-  top: ${({ theme }) => theme.spacings.small};
-  left: ${({ theme }) => theme.spacings.small};
-  right: ${({ theme }) => theme.spacings.small};
+const StickyHeaderContainer = styled.div`
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,9 +23,7 @@ const HeaderCollapsedContainer = styled.div<{ isDisplayed: boolean }>`
   background: ${({ theme }) => theme.colors.background};
   box-shadow: ${({ theme }) =>
     `0 0 ${theme.spacings.medium} ${theme.colors.shadow}`};
-  opacity: ${({ isDisplayed }) => (isDisplayed ? '1' : '0')};
   transition: opacity ${({ theme }) => theme.speeds.fast};
-  pointer-events: ${({ isDisplayed }) => (isDisplayed ? 'initial' : 'none')};
 `;
 
 const StyledHeaderTitle = styled(HeaderTitle)`

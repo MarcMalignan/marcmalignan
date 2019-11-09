@@ -16,7 +16,12 @@ export const Header: FC<{}> = () => (
 );
 
 const HeaderContainer = styled.div`
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: ${({ theme }) => theme.colors.background};
+  z-index: 1;
 `;
 
 const StyledHeaderTitle = styled(HeaderTitle)`
