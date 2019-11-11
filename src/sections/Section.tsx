@@ -1,23 +1,28 @@
 import React, { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ColoredFirstLetter } from '../components/ColoredFirstLetter';
 import { Title } from '../components/commons';
 import { styled } from '../style/theme';
 
 interface ISectionProps {
-  title: string;
+  id: string;
 }
 
-export const Section: FC<ISectionProps> = ({ children, title }) => (
-  <SectionContainer>
-    <Title>
-      <ColoredFirstLetter label={title} />
-    </Title>
-    {children}
-  </SectionContainer>
-);
+export const Section: FC<ISectionProps> = ({ children, id }) => {
+  const { t } = useTranslation();
+
+  return (
+    <SectionContainer id={id} className="section">
+      <Title>
+        <ColoredFirstLetter label={t(`nav.${id}`)} />
+      </Title>
+      {children}
+    </SectionContainer>
+  );
+};
 
 const SectionContainer = styled.div`
-  margin-bottom: ${({ theme }) => theme.spacings.huge};
+  padding-top: ${({ theme }) => theme.spacings.huge};
 
   &:last-child {
     margin-bottom: 0;

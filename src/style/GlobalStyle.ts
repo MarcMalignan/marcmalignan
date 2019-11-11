@@ -18,6 +18,9 @@ export const GlobalStyle = createGlobalStyle<IGlobalStyle>`
     @import url('https://fonts.googleapis.com/css?family=Josefin+Slab:600&display=swap');
     @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
     margin: 0;
+    background: ${({ theme }) => theme.colors.background};
+    font-family: ${({ theme }) => theme.fonts.text};
+    color: ${({ theme }) => theme.colors.fontPrimary};
   }
 
   ::-webkit-scrollbar {

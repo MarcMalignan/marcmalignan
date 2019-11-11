@@ -4,6 +4,7 @@ import { ContentWidth } from './components/commons';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { StickyHeader } from './components/Header/StickyHeader';
+import { ScrollContainer } from './components/ScrollContainer';
 import { About } from './sections/About';
 import { Contact } from './sections/Contact';
 import { Experience } from './sections/Experience';
@@ -25,7 +26,7 @@ export class App extends Component<{}> {
         <GlobalStyle theme={appTheme} />
         <AppContextProvider>
           <ThemeProvider theme={appTheme}>
-            <AppContainer>
+            <ScrollContainer>
               <Header />
               <StickyHeader />
               <ContentContainer>
@@ -35,7 +36,7 @@ export class App extends Component<{}> {
                 <Contact />
               </ContentContainer>
               <Footer />
-            </AppContainer>
+            </ScrollContainer>
           </ThemeProvider>
         </AppContextProvider>
       </>
@@ -43,18 +44,7 @@ export class App extends Component<{}> {
   }
 }
 
-const CONTENT_SPACING_TOP = 400;
-
-const AppContainer = styled.div`
-  position: relative;
-  height: 100vh;
-  background: ${({ theme }) => theme.colors.background};
-  font-family: ${({ theme }) => theme.fonts.text};
-  color: ${({ theme }) => theme.colors.fontPrimary};
-  border: ${({ theme }) =>
-    `${theme.spacings.small} solid ${theme.colors.accent}`};
-  overflow: auto;
-`;
+const CONTENT_SPACING_TOP = 300;
 
 const ContentContainer = styled(ContentWidth)`
   padding-top: ${CONTENT_SPACING_TOP}px;

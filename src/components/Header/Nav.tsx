@@ -9,12 +9,19 @@ interface INavProps {
   isCollapsed?: boolean;
 }
 
+const scrollToSection = (id: string) => {
+  document.getElementById(id).scrollIntoView(true);
+};
+
 export const Nav: FC<INavProps> = ({ className, isCollapsed = false }) => {
   const { t } = useTranslation();
   const { currentNav, setCurrentNav } = useContext(AppContext);
 
   const onNavItemClick = useCallback(
-    (navItem: ENavItems) => () => setCurrentNav(navItem),
+    (navItem: ENavItems) => () => {
+      scrollToSection(navItem);
+      setCurrentNav(navItem);
+    },
     [],
   );
 
