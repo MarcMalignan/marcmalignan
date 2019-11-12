@@ -1,5 +1,4 @@
 import React, { FC } from 'react';
-import { styled } from '../style/theme';
 
 interface IColoredFirstLetterProps {
   label: string;
@@ -8,16 +7,9 @@ interface IColoredFirstLetterProps {
 export const ColoredFirstLetter: FC<IColoredFirstLetterProps> = ({ label }) => {
   const [firstLetter, ...rest] = label;
   return (
-    <ColoredFirstLetterContainer>
+    <span>
       <i>{firstLetter}</i>
       {rest}
-    </ColoredFirstLetterContainer>
+    </span>
   );
 };
-
-const ColoredFirstLetterContainer = styled.span`
-  i {
-    font-style: normal;
-    color: ${({ theme }) => theme.colors.accent};
-  }
-`;

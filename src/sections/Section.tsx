@@ -22,9 +22,6 @@ export const Section: FC<ISectionProps> = ({ children, id }) => {
 };
 
 const SectionContainer = styled.div`
-  padding-top: ${({ theme }) => theme.spacings.huge};
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+  padding: ${({ theme }) => theme.spacings.huge} 0;
+  border-bottom: 2px solid ${({ theme }) => theme.colors.separator};
 `;

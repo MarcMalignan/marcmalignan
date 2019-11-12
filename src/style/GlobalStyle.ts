@@ -23,6 +23,11 @@ export const GlobalStyle = createGlobalStyle<IGlobalStyle>`
     color: ${({ theme }) => theme.colors.fontPrimary};
   }
 
+  i {
+    font-style: normal;
+    color: ${({ theme }) => theme.colors.accent};
+  }
+
   ::-webkit-scrollbar {
     width: ${SCROLLBAR_WIDTH + SCROLLBAR_SPACING * 2}px;
   }

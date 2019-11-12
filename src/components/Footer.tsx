@@ -10,5 +10,4 @@ const FooterContainer = styled(ContentWidth)`
   font-size: 0.8em;
   text-align: center;
   padding: ${({ theme }) => theme.spacings.medium} 0;
-  border-top: 1px solid ${({ theme }) => theme.colors.separator};
 `;

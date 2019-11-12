@@ -23,6 +23,15 @@ module.exports = {
         enforce: 'pre',
         loader: 'source-map-loader',
       },
+      {
+        test: /\.svg$/,
+        use: [
+          'file-loader',
+          {
+            loader: 'image-webpack-loader',
+          },
+        ],
+      },
     ],
   },
   plugins: [

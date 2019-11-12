@@ -48,5 +48,4 @@ const CONTENT_SPACING_TOP = 300;
 
 const ContentContainer = styled(ContentWidth)`
   padding-top: ${CONTENT_SPACING_TOP}px;
-  padding-bottom: ${({ theme }) => theme.spacings.huge};
 `;
