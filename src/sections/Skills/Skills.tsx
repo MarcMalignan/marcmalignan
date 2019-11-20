@@ -1,4 +1,4 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC, Fragment, useCallback } from 'react';
 import { Paragraphs } from '../../components/Paragraphs';
 import { styled } from '../../style/theme';
 import { Section } from '../Section';
@@ -9,7 +9,7 @@ import { ISkill, ISkillGroup } from './skills.types';
 export const Skills: FC<{}> = () => {
   const renderSkillGroup = useCallback(
     ({ id, mainRow, otherRow }: ISkillGroup) => (
-      <>
+      <Fragment key={id}>
         <Paragraphs translationKey={`skills.${id}`} />
         <SkillsRowsContainer>
           {mainRow.length > 0 ? (
@@ -19,7 +19,7 @@ export const Skills: FC<{}> = () => {
             <SkillsRow>{otherRow.map(renderSkill(true))}</SkillsRow>
           ) : null}
         </SkillsRowsContainer>
-      </>
+      </Fragment>
     ),
     [],
   );
@@ -33,7 +33,7 @@ export const Skills: FC<{}> = () => {
 };
 
 const renderSkill = (isSmall?: boolean) => (skill: ISkill) => (
-  <Skill skill={skill} isSmall={isSmall} />
+  <Skill key={skill.name} skill={skill} isSmall={isSmall} />
 );
 
 const SkillsRowsContainer = styled.div`
