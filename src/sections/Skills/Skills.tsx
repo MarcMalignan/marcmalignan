@@ -1,16 +1,12 @@
 import React, { FC, useCallback } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Paragraph } from '../../components/commons';
+import { Paragraphs } from '../../components/Paragraphs';
 import { styled } from '../../style/theme';
 import { Section } from '../Section';
 import { Skill } from './Skill';
 import { skillsData } from './skills.data';
 import { ISkill, ISkillGroup } from './skills.types';
-import { Paragraphs } from '../../components/Paragraphs';
 
 export const Skills: FC<{}> = () => {
-  const { i18n } = useTranslation();
-
   const renderSkillGroup = useCallback(
     ({ id, mainRow, otherRow }: ISkillGroup) => (
       <>
