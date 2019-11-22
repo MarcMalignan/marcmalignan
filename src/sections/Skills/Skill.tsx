@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { styled } from '../../style/theme';
-import { ISkill } from './skills.types';
+import { ISkill } from './skills.data';
 
 interface ISkillProps {
   isSmall?: boolean;

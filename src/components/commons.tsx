@@ -1,7 +1,7 @@
 import { styled } from '../style/theme';
 
 export const ContentWidth = styled.div`
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 ${({ theme }) => theme.spacings.medium};
 `;

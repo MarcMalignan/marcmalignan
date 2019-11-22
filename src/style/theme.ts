@@ -2,10 +2,10 @@ import baseStyled, { ThemedStyledInterface } from 'styled-components';
 
 const colors = {
   accent: '#fa7268',
+  accent2: '#eee',
   background: '#fafafa',
   fontPrimary: '#222',
   fontSecondary: '#fafafa',
-  separator: '#eee',
   shadow: 'rgba(0, 0, 0, 0.1)',
 };
 

@@ -21,7 +21,7 @@ const HeaderContainer = styled.div`
   left: 0;
   right: 0;
   background: ${({ theme }) => theme.colors.background};
-  z-index: 1;
+  z-index: 2;
 `;
 
 const StyledHeaderTitle = styled(HeaderTitle)`

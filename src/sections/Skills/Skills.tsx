@@ -3,8 +3,7 @@ import { Paragraphs } from '../../components/Paragraphs';
 import { styled } from '../../style/theme';
 import { Section } from '../Section';
 import { Skill } from './Skill';
-import { skillsData } from './skills.data';
-import { ISkill, ISkillGroup } from './skills.types';
+import { ISkill, ISkillGroup, skillsData } from './skills.data';
 
 export const Skills: FC<{}> = () => {
   const renderSkillGroup = useCallback(
@@ -27,7 +26,7 @@ export const Skills: FC<{}> = () => {
   return (
     <Section id="skills">
       <Paragraphs translationKey="skills.intro" />
-      {skillsData.skills.map(renderSkillGroup)}
+      {skillsData.map(renderSkillGroup)}
     </Section>
   );
 };

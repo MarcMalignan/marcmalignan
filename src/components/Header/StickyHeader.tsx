@@ -24,6 +24,7 @@ const StickyHeaderContainer = styled.div`
   box-shadow: ${({ theme }) =>
     `0 0 ${theme.spacings.medium} ${theme.colors.shadow}`};
   transition: opacity ${({ theme }) => theme.speeds.fast};
+  z-index: 1;
 `;
 
 const StyledHeaderTitle = styled(HeaderTitle)`

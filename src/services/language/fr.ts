@@ -1,5 +1,8 @@
 export const frTranslations = {
   translation: {
+    date: {
+      since: 'depuis',
+    },
     nav: {
       about: 'A propos',
       skills: 'Compétences',
@@ -17,6 +20,32 @@ export const frTranslations = {
         "A ce jour <i>React</i> est ma librairie de prédilection, je l'utilise depuis plusieurs années, mais j'ai également de l'expérience professionnelle avec d'autres frameworks et librairies front-end. Côté back-end j'ai travaillé sur des environnements <i>NodeJS</i> pour plusieurs clients.",
       devtools:
         "La <i>qualité du code</i> que je produis est primordiale pour moi, c'est pourquoi j'accorde un intérêt tout particulier aux outils de test, de linting, de formatage de code, ainsi qu'aux problématiques de build/déploiement du projet.",
+    },
+    experience: {
+      descriptions: {
+        meetic: 'Application web/native de matchmaking',
+        rf: 'Refonte du back-office des journalistes',
+        dimitri: 'Site vitrine pour mon frère (pianiste concertiste)',
+        pmu: 'Application web de paris hippiques',
+        challenges: 'Refonte des deux sites media du groupe',
+        stime: 'Plusieurs applications web de back-office',
+        equipe: 'Pétition pour la Coupe du monde de football 2014',
+        ratp: 'Ecran de contrôle des applications RATP',
+        pagesjaunes: "Refonte de l'application web tablette des commerciaux",
+        sfr: 'Migration des données clients mobile',
+      },
+      context: {
+        backOffice: 'Back-office',
+        database: 'Bases de données',
+        fromScratch: 'From scratch',
+        improvement: 'Amélioration continue',
+        maintenance: 'Maintenance',
+        performance: 'Performance',
+        public: 'Public',
+        rework: 'Refonte',
+        seo: 'SEO',
+        uxui: 'UX/UI',
+      },
     },
   },
 };

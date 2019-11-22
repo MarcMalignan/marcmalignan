@@ -60,7 +60,7 @@ const NavItem = styled.div<{ isSelected?: boolean }>`
   transition: all ${({ theme }) => theme.speeds.normal};
   border-bottom: ${({ theme }) => theme.spacings.line} solid;
   border-color: ${({ isSelected, theme }) =>
-    isSelected ? theme.colors.accent : theme.colors.separator};
+    isSelected ? theme.colors.accent : theme.colors.accent2};
   color: ${({ isSelected, theme }) =>
     isSelected ? theme.colors.accent : theme.colors.fontPrimary};
 
