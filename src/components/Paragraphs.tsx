@@ -1,4 +1,4 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Paragraph } from './commons';
 
@@ -16,15 +16,15 @@ export const Paragraphs: FC<IParagraphsProps> = ({ translationKey }) => {
     ? translation
     : [translation];
 
-  const renderParagraph = useCallback(
-    (label: string, index: number) => (
-      <Paragraph
-        dangerouslySetInnerHTML={{ __html: label }}
-        key={`${translationKey}-${index}`}
-      />
-    ),
-    [],
-  );
-
-  return <>{translationArray.map(renderParagraph)}</>;
+  return <>{translationArray.map(renderParagraph(translationKey))}</>;
 };
+
+const renderParagraph = (translationKey: string) => (
+  label: string,
+  index: number,
+) => (
+  <Paragraph
+    dangerouslySetInnerHTML={{ __html: label }}
+    key={`${translationKey}-${index}`}
+  />
+);
