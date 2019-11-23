@@ -23,3 +23,8 @@ export const Paragraph = styled.p`
     margin-bottom: 0;
   }
 `;
+
+export const ParagraphInsert = styled(Paragraph)`
+  padding: ${({ theme }) => theme.spacings.small} 0;
+  line-height: initial;
+`;

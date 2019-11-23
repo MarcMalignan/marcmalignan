@@ -23,6 +23,10 @@ export const GlobalStyle = createGlobalStyle<IGlobalStyle>`
     color: ${({ theme }) => theme.colors.fontPrimary};
   }
 
+  a {
+    color: ${({ theme }) => theme.colors.accent};
+  }
+
   i {
     font-style: normal;
     color: ${({ theme }) => theme.colors.accent};

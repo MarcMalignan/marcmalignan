@@ -1,9 +1,10 @@
 import React, { FC, Fragment } from 'react';
+import { ParagraphInsert } from '../../components/commons';
 import { Paragraphs } from '../../components/Paragraphs';
 import { styled } from '../../style/theme';
 import { Section } from '../Section';
-import { Skill } from './Skill';
 import { ISkill, ISkillGroup, skillsData } from './skills.data';
+import { Logo } from '../../components/Logo';
 
 export const Skills: FC<{}> = () => (
   <Section id="skills">
@@ -15,25 +16,20 @@ export const Skills: FC<{}> = () => (
 const renderSkillGroup = ({ id, mainRow, otherRow }: ISkillGroup) => (
   <Fragment key={id}>
     <Paragraphs translationKey={`skills.${id}`} />
-    <SkillsRowsContainer>
+    <ParagraphInsert>
       {mainRow.length > 0 ? (
         <SkillsRow>{mainRow.map(renderSkill())}</SkillsRow>
       ) : null}
       {otherRow.length > 0 ? (
         <SkillsRow>{otherRow.map(renderSkill(true))}</SkillsRow>
       ) : null}
-    </SkillsRowsContainer>
+    </ParagraphInsert>
   </Fragment>
 );
 
-const renderSkill = (isSmall?: boolean) => (skill: ISkill) => (
-  <Skill key={skill.name} skill={skill} isSmall={isSmall} />
+const renderSkill = (isSmall?: boolean) => ({ link, logo, name }: ISkill) => (
+  <Logo key={name} isSmall={isSmall} link={link} logo={logo} name={name} />
 );
-
-const SkillsRowsContainer = styled.div`
-  padding: ${({ theme }) => theme.spacings.small} 0;
-  margin-bottom: ${({ theme }) => theme.spacings.small};
-`;
 
 const SkillsRow = styled.div`
   display: flex;

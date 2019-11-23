@@ -1,5 +1,12 @@
+import {
+  faDesktop,
+  faMobileAlt,
+  faTabletAlt,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { FC } from 'react';
-import { Paragraph } from '../components/commons';
+import { Paragraph, ParagraphInsert } from '../components/commons';
+import { styled } from '../style/theme';
 import { Section } from './Section';
 
 export const About: FC<{}> = () => (
@@ -25,5 +32,20 @@ export const About: FC<{}> = () => (
       ante luctus, eleifend nunc. Mauris lacinia nunc dolor, a eleifend odio
       molestie fermentum.
     </Paragraph>
+    <DevicesContainer>
+      <Device icon={faMobileAlt} size="5x" />
+      <Device icon={faTabletAlt} size="7x" />
+      <Device icon={faDesktop} size="9x" />
+    </DevicesContainer>
   </Section>
 );
+
+const DevicesContainer = styled(ParagraphInsert)`
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+`;
+
+const Device = styled(FontAwesomeIcon)`
+  margin: 0 ${({ theme }) => theme.spacings.medium};
+`;
