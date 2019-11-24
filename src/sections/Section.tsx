@@ -24,4 +24,8 @@ export const Section: FC<ISectionProps> = ({ children, id }) => {
 const SectionContainer = styled.div`
   padding: ${({ theme }) => theme.spacings.huge} 0;
   border-bottom: 2px solid ${({ theme }) => theme.colors.accent2};
+
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    padding: ${({ theme }) => theme.spacings.large} 0;
+  }
 `;

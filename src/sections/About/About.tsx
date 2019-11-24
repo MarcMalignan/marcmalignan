@@ -5,9 +5,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { FC } from 'react';
-import { Paragraph, ParagraphInsert } from '../components/commons';
-import { styled } from '../style/theme';
-import { Section } from './Section';
+import { Paragraph, ParagraphInsert } from '../../components/commons';
+import { styled } from '../../style/theme';
+import { Section } from '../Section';
 
 export const About: FC<{}> = () => (
   <Section id="about">
@@ -33,9 +33,9 @@ export const About: FC<{}> = () => (
       molestie fermentum.
     </Paragraph>
     <DevicesContainer>
-      <Device icon={faMobileAlt} size="5x" />
-      <Device icon={faTabletAlt} size="7x" />
-      <Device icon={faDesktop} size="9x" />
+      <DevicePhone icon={faMobileAlt} size="5x" />
+      <DeviceTablet icon={faTabletAlt} size="7x" />
+      <DeviceDesktop icon={faDesktop} size="9x" />
     </DevicesContainer>
   </Section>
 );
@@ -48,4 +48,18 @@ const DevicesContainer = styled(ParagraphInsert)`
 
 const Device = styled(FontAwesomeIcon)`
   margin: 0 ${({ theme }) => theme.spacings.medium};
+
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    margin: 0 ${({ theme }) => theme.spacings.small};
+  }
+`;
+
+const DevicePhone = styled(Device)`
+  font-size: ${({ theme }) => theme.iconSizes.medium};
+`;
+const DeviceTablet = styled(Device)`
+  font-size: ${({ theme }) => theme.iconSizes.large};
+`;
+const DeviceDesktop = styled(Device)`
+  font-size: ${({ theme }) => theme.iconSizes.huge};
 `;

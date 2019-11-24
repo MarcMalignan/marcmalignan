@@ -14,6 +14,17 @@ const fonts = {
   text: "'Open Sans', sans-serif",
 };
 
+const iconSizes = {
+  small: '40px',
+  medium: '60px',
+  large: '80px',
+  huge: '100px',
+};
+
+const sizes = {
+  mobile: '900px',
+};
+
 const spacings = {
   line: '2px',
   tiny: '5px',
@@ -31,6 +42,8 @@ const speeds = {
 export const appTheme = {
   colors,
   fonts,
+  iconSizes,
+  sizes,
   spacings,
   speeds,
 };

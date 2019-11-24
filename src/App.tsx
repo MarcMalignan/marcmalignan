@@ -26,17 +26,19 @@ export class App extends Component<{}> {
         <GlobalStyle theme={appTheme} />
         <AppContextProvider>
           <ThemeProvider theme={appTheme}>
-            <ScrollContainer>
-              <Header />
-              <StickyHeader />
-              <ContentContainer>
-                <About />
-                <Skills />
-                <Experience />
-                <Contact />
-              </ContentContainer>
-              <Footer />
-            </ScrollContainer>
+            <BorderContainer>
+              <ScrollContainer>
+                <Header />
+                <StickyHeader />
+                <ContentContainer>
+                  <About />
+                  <Skills />
+                  <Experience />
+                  <Contact />
+                </ContentContainer>
+                <Footer />
+              </ScrollContainer>
+            </BorderContainer>
           </ThemeProvider>
         </AppContextProvider>
       </>
@@ -46,6 +48,22 @@ export class App extends Component<{}> {
 
 const CONTENT_SPACING_TOP = 300;
 
+const BorderContainer = styled.div`
+  height: 100vh;
+  border: ${({ theme }) => `${theme.spacings.small} solid`};
+  border-color: ${({ theme }) => theme.colors.accent};
+
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    padding-top: ${({ theme }) => theme.spacings.large};
+    border: ${({ theme }) => `${theme.spacings.tiny} solid`};
+    border-color: ${({ theme }) => theme.colors.accent};
+  }
+`;
+
 const ContentContainer = styled(ContentWidth)`
   padding-top: ${CONTENT_SPACING_TOP}px;
+
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    padding-top: 0;
+  }
 `;

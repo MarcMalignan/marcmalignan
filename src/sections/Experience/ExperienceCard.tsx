@@ -31,9 +31,9 @@ export const ExperienceCard: FC<IExperienceCardProps> = ({
   return (
     <ExperienceCardContainer isEvent={isEvent}>
       {startDate ? (
-        <ExperienceDate>
+        <ExperienceDateDesktop>
           {formatDateStartEnd(startDate, endDate)}
-        </ExperienceDate>
+        </ExperienceDateDesktop>
       ) : null}
       <ExperienceCardHeader
         href={link}
@@ -43,6 +43,11 @@ export const ExperienceCard: FC<IExperienceCardProps> = ({
       >
         <ExperienceTitle>{title}</ExperienceTitle>
         {subtitle ? <ExperienceSubtitle>{subtitle}</ExperienceSubtitle> : null}
+        {startDate ? (
+          <ExperienceDateMobile>
+            {formatDateStartEnd(startDate, endDate)}
+          </ExperienceDateMobile>
+        ) : null}
       </ExperienceCardHeader>
       {!isEvent ? (
         <ExperienceCardBody>
@@ -78,6 +83,10 @@ const ExperienceCardContainer = styled.div<{
   text-align: center;
   box-shadow: ${({ isEvent, theme }) =>
     isEvent ? 'none' : `0 0 ${theme.spacings.medium} ${theme.colors.shadow}`};
+
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    width: ${({ isEvent }) => (isEvent ? 'auto' : '100%')};
+  }
 `;
 
 const ExperienceCardHeader = styled.a<{
@@ -94,6 +103,10 @@ const ExperienceCardHeader = styled.a<{
   font-family: ${({ theme }) => theme.fonts.title};
   text-decoration: none;
 
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    padding: ${({ theme }) => theme.spacings.small};
+  }
+
   &:before {
     content: '';
     display: ${({ isEvent }) => (isEvent ? 'none' : 'block')};
@@ -107,10 +120,18 @@ const ExperienceCardHeader = styled.a<{
     transform-origin: center;
     transform: translate(${({ isRight }) => (isRight ? 50 : -50)}%, -50%)
       rotate(45deg);
+
+    @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+      display: none;
+    }
   }
 `;
 
 const ExperienceDate = styled.div`
+  font-size: 0.8em;
+`;
+
+const ExperienceDateDesktop = styled(ExperienceDate)`
   position: absolute;
   bottom: 100%;
   left: 0;
@@ -119,15 +140,25 @@ const ExperienceDate = styled.div`
   align-items: center;
   justify-content: center;
   height: ${({ theme }) => theme.spacings.medium};
-  font-size: 0.8em;
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    display: none;
+  }
+`;
+
+const ExperienceDateMobile = styled(ExperienceDate)`
+  margin-top: ${({ theme }) => theme.spacings.small};
+  font-family: ${({ theme }) => theme.fonts.text};
 `;
 
 const ExperienceCardBody = styled.div`
   padding: ${({ theme }) => theme.spacings.small};
+  background: ${({ theme }) => theme.colors.background};
 `;
 
 const ExperienceTitle = styled.div`
   font-size: 1.8em;
+  text-overflow: ellipsis;
+  overflow: hidden;
 `;
 
 const ExperienceSubtitle = styled.div`

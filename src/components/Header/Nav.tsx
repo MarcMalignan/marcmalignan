@@ -50,6 +50,10 @@ export const Nav: FC<INavProps> = ({ className, isCollapsed = false }) => {
 
 const NavContainer = styled.div`
   display: flex;
+
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    display: initial;
+  }
 `;
 
 const NavItem = styled.div<{ isSelected?: boolean }>`
@@ -67,6 +71,10 @@ const NavItem = styled.div<{ isSelected?: boolean }>`
   &:hover {
     color: ${({ theme }) => theme.colors.accent};
   }
+
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    border: none;
+  }
 `;
 const NavItemFull = styled(NavItem)`
   flex-grow: 1;
@@ -75,6 +83,10 @@ const NavItemFull = styled(NavItem)`
   padding-top: 0;
   font-size: 1.6em;
   text-align: center;
+
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    padding-top: ${({ theme }) => theme.spacings.medium};
+  }
 `;
 const NavItemCollapsed = styled(NavItem)`
   display: flex;

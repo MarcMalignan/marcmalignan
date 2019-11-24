@@ -35,6 +35,10 @@ const Timeline = styled.div`
     background: ${({ theme }) => theme.colors.accent2};
     transform: translateX(-50%);
   }
+
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    padding-top: 0;
+  }
 `;
 
 const ExperienceWrapper = styled.div<{

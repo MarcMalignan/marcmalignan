@@ -42,8 +42,7 @@ const getVisibleSectionId = () => {
 
 const Container = styled.div`
   position: relative;
-  height: 100vh;
-  border: ${({ theme }) =>
-    `${theme.spacings.small} solid ${theme.colors.accent}`};
-  overflow: auto;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 `;

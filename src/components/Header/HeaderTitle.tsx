@@ -46,4 +46,5 @@ const TitleFull = styled(Title)`
 `;
 const TitleCollapsed = styled(Title)`
   font-size: 2em;
+  white-space: nowrap;
 `;

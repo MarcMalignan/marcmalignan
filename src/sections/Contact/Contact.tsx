@@ -1,11 +1,11 @@
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { FC } from 'react';
-import { ParagraphInsert } from '../components/commons';
-import { Logo } from '../components/Logo';
-import { Paragraphs } from '../components/Paragraphs';
-import { styled } from '../style/theme';
-import { Section } from './Section';
+import { ParagraphInsert } from '../../components/commons';
+import { Logo } from '../../components/Logo';
+import { Paragraphs } from '../../components/Paragraphs';
+import { styled } from '../../style/theme';
+import { Section } from '../Section';
 
 export const Contact: FC<{}> = () => (
   <Section id="contact">
@@ -17,7 +17,7 @@ export const Contact: FC<{}> = () => (
           href="mailto:contact@marcmalignan.com"
           target="__blank"
         >
-          <FontAwesomeIcon icon={faEnvelope} size="7x" />
+          <StyledIcon icon={faEnvelope} />
         </MailLink>
       </LinksContainer>
       <LinksContainer>
@@ -26,19 +26,15 @@ export const Contact: FC<{}> = () => (
           logo="linkedin.svg"
           link="https://www.linkedin.com/in/marc-malignan-b3522b80/"
         />
-      </LinksContainer>
-      <LinksContainer>
         <Logo
           name="GitHub"
           logo="github.svg"
           link="https://github.com/MarcMalignan"
-          isSmall
         />
         <Logo
           name="Codepen"
           logo="codepen.svg"
           link="https://codepen.io/MarcMalignan"
-          isSmall
         />
       </LinksContainer>
     </ParagraphInsert>
@@ -56,5 +52,9 @@ const LinksContainer = styled.div`
 `;
 
 const MailLink = styled.a`
-  color: ${({ theme }) => theme.colors.fontPrimary};
+  color: ${({ theme }) => theme.colors.accent};
+`;
+
+const StyledIcon = styled(FontAwesomeIcon)`
+  font-size: ${({ theme }) => theme.iconSizes.huge};
 `;

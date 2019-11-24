@@ -9,5 +9,5 @@ export const Footer: FC<{}> = () => (
 const FooterContainer = styled(ContentWidth)`
   font-size: 0.8em;
   text-align: center;
-  padding: ${({ theme }) => theme.spacings.medium} 0;
+  padding: ${({ theme }) => theme.spacings.medium} 0 !important;
 `;

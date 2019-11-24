@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { styled } from '../../style/theme';
+import { BurgerMenu } from './BurgerMenu';
 import { HeaderTitle } from './HeaderTitle';
 import { Language } from './Language';
 import { Nav } from './Nav';
@@ -8,7 +9,8 @@ export const StickyHeader: FC<{}> = () => (
   <StickyHeaderContainer>
     <StyledHeaderTitle isCollapsed />
     <StyledNav isCollapsed />
-    <Language />
+    <StyledLanguage />
+    <StyledBurgerMenu />
   </StickyHeaderContainer>
 );
 
@@ -25,6 +27,13 @@ const StickyHeaderContainer = styled.div`
     `0 0 ${theme.spacings.medium} ${theme.colors.shadow}`};
   transition: opacity ${({ theme }) => theme.speeds.fast};
   z-index: 1;
+
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    position: fixed;
+    top: ${({ theme }) => theme.spacings.tiny};
+    left: ${({ theme }) => theme.spacings.tiny};
+    right: ${({ theme }) => theme.spacings.tiny};
+  }
 `;
 
 const StyledHeaderTitle = styled(HeaderTitle)`
@@ -33,4 +42,22 @@ const StyledHeaderTitle = styled(HeaderTitle)`
 
 const StyledNav = styled(Nav)`
   margin-right: ${({ theme }) => theme.spacings.large};
+
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    display: none;
+  }
+`;
+
+const StyledLanguage = styled(Language)`
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    display: none;
+  }
+`;
+
+const StyledBurgerMenu = styled(BurgerMenu)`
+  display: none;
+
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    display: initial;
+  }
 `;

@@ -23,7 +23,14 @@ const LogoLink = styled.a`
   margin: 0 ${({ theme }) => theme.spacings.small};
 `;
 
+/* eslint-disable @typescript-eslint/indent */
 export const LogoImg = styled.img<{ isSmall?: boolean }>`
   display: block;
-  height: ${({ isSmall }) => (isSmall ? 40 : 80)}px;
+  height: ${({ isSmall, theme }) =>
+    isSmall ? theme.iconSizes.small : theme.iconSizes.large};
+
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    height: ${({ isSmall, theme }) =>
+      isSmall ? theme.iconSizes.small : theme.iconSizes.medium};
+  }
 `;
