@@ -47,5 +47,11 @@ export const frTranslations = {
         uxui: 'UX/UI',
       },
     },
+    contact: {
+      text: [
+        "Pour toute demande n'hésitez pas à me contacter par <i>email</i> en cliquant sur l'enveloppe ci-dessous.",
+        'Vous trouverez également des liens vers mes comptes <i>Linkedin</i>, <i>GitHub</i> qui contient notamment le code source de ce site, ainsi que <i>Codepen</i> sur lequel je partage sur mon temps libre des créations JS/CSS :)',
+      ],
+    },
   },
 };
