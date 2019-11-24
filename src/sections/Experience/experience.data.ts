@@ -113,6 +113,7 @@ export const experienceData: IExperience[] = [
   {
     id: 'sfeir',
     title: 'SFEIR',
+    link: 'https://www.sfeir.com/fr',
   },
   {
     id: 'ratp',
@@ -144,5 +145,17 @@ export const experienceData: IExperience[] = [
   {
     id: 'capgemini',
     title: 'Capgemini',
+    link: 'https://www.capgemini.com/fr-fr/',
+  },
+  {
+    id: 'stafford',
+    title: 'Staffordshire University',
+    subtitle: 'Master of Science',
+    link: 'https://www.staffs.ac.uk/',
+  },
+  {
+    id: 'ece',
+    title: "Ecole Centrale d'Electronique",
+    link: 'https://www.ece.fr/',
   },
 ];

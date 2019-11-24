@@ -18,6 +18,7 @@ export const ExperienceCard: FC<IExperienceCardProps> = ({
     id,
     title,
     subtitle,
+    link,
     techTags,
     contextTags,
     startDate,
@@ -35,7 +36,7 @@ export const ExperienceCard: FC<IExperienceCardProps> = ({
         </ExperienceDate>
       ) : null}
       <ExperienceCardHeader
-        href=""
+        href={link}
         target="__blank"
         isEvent={isEvent}
         isRight={index % 2 === 0}

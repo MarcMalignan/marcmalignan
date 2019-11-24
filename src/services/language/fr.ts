@@ -22,10 +22,15 @@ export const frTranslations = {
         "La <i>qualité du code</i> que je produis est primordiale pour moi, c'est pourquoi j'accorde un intérêt tout particulier aux outils de test, de linting, de formatage de code, ainsi qu'aux problématiques de build/déploiement du projet.",
     },
     experience: {
+      text: [
+        "Je travaille en tant que développeur depuis 2011, date à laquelle j'ai rejoint le groupe <i>Capgemini</i> où j'ai pu d'abord faire mes armes sur une mission liée à la migration de données pour après me focaliser sur le <i>développement web</i>.",
+        "J'ai ensuite rejoint en 2014 la société <i>SFEIR</i>, pour laquelle je suis maintenant <i>développeur front senior</i>, et où j'ai eu l'opportunité de réaliser de nombreuses missions pour des clients très variés.",
+        "Côté formation j'ai suivi un cursus classique d'école d'ingénieur à l'<i>ECE</i> avant de terminer mes études dans l'université anglaise de <i>Staffordshire</i> où j'ai pu me focaliser pleinement sur le développement.",
+      ],
       descriptions: {
         meetic: 'Application web/native de matchmaking',
         rf: 'Refonte du back-office des journalistes',
-        dimitri: 'Site vitrine pour mon frère (pianiste concertiste)',
+        dimitri: 'Projet personnel : site vitrine pour mon frère (pianiste)',
         pmu: 'Application web de paris hippiques',
         challenges: 'Refonte des deux sites media du groupe',
         stime: 'Plusieurs applications web de back-office',
