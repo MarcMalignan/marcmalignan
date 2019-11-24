@@ -15,14 +15,17 @@ const scrollToSection = (id: string) => {
 
 export const Nav: FC<INavProps> = ({ className, isCollapsed = false }) => {
   const { t } = useTranslation();
-  const { currentNav, setCurrentNav } = useContext(AppContext);
+  const { currentNav, scrollContainer } = useContext(AppContext);
 
   const onNavItemClick = useCallback(
     (navItem: ENavItems) => () => {
-      scrollToSection(navItem);
-      setCurrentNav(navItem);
+      if (navItem === ENavItems.ABOUT) {
+        scrollContainer.scrollTo(0, 0);
+      } else {
+        scrollToSection(navItem);
+      }
     },
-    [],
+    [scrollContainer],
   );
 
   const renderNavItem = useCallback(
