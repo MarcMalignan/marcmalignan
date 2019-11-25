@@ -10,13 +10,14 @@ const SCROLLBAR_WIDTH = 2;
 const SCROLLBAR_SPACING = 5;
 
 export const GlobalStyle = createGlobalStyle<IGlobalStyle>`
+  @import url('https://fonts.googleapis.com/css?family=Josefin+Slab:600&display=swap');
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
   * {
     box-sizing: border-box;
   }
 
   body {
-    @import url('https://fonts.googleapis.com/css?family=Josefin+Slab:600&display=swap');
-    @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
     margin: 0;
     background: ${({ theme }) => theme.colors.background};
     font-family: ${({ theme }) => theme.fonts.text};
@@ -30,7 +31,6 @@ export const GlobalStyle = createGlobalStyle<IGlobalStyle>`
   i {
     font-style: normal;
     color: ${({ theme }) => theme.colors.accent};
-    white-space: nowrap;
   }
 
   ::-webkit-scrollbar {

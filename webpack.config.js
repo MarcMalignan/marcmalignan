@@ -35,7 +35,12 @@ module.exports = {
       {
         test: /\.svg$/,
         use: [
-          'file-loader',
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: '/images/',
+            },
+          },
           {
             loader: 'image-webpack-loader',
           },
