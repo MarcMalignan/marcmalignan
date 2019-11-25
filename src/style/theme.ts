@@ -22,7 +22,7 @@ const iconSizes = {
 };
 
 const sizes = {
-  mobile: '900px',
+  mobile: '1000px',
 };
 
 const spacings = {

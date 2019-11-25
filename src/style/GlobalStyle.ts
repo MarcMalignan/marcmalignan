@@ -30,6 +30,7 @@ export const GlobalStyle = createGlobalStyle<IGlobalStyle>`
   i {
     font-style: normal;
     color: ${({ theme }) => theme.colors.accent};
+    white-space: nowrap;
   }
 
   ::-webkit-scrollbar {

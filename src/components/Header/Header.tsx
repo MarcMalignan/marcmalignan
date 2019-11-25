@@ -7,11 +7,11 @@ import { Nav } from './Nav';
 
 export const Header: FC<{}> = () => (
   <HeaderContainer>
-    <ContentWidth>
+    <HeaderContent>
       <StyledHeaderTitle />
       <StyledNav />
       <StyledLanguage />
-    </ContentWidth>
+    </HeaderContent>
   </HeaderContainer>
 );
 
@@ -26,6 +26,10 @@ const HeaderContainer = styled.div`
   @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
     display: none;
   }
+`;
+
+const HeaderContent = styled(ContentWidth)`
+  padding: 0;
 `;
 
 const StyledHeaderTitle = styled(HeaderTitle)`
