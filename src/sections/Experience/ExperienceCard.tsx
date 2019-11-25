@@ -74,12 +74,15 @@ const renderContextTags = (label: string, index: number) => {
   );
 };
 
+const CARD_MAX_WIDTH = 500;
+
 const ExperienceCardContainer = styled.div<{
   isEvent: boolean;
 }>`
   position: relative;
   width: ${({ isEvent, theme }) =>
     isEvent ? 'auto' : `calc(50% - ${theme.spacings.medium})`};
+  max-width: ${CARD_MAX_WIDTH}px;
   text-align: center;
   box-shadow: ${({ isEvent, theme }) =>
     isEvent ? 'none' : `0 0 ${theme.spacings.medium} ${theme.colors.shadow}`};
@@ -140,6 +143,7 @@ const ExperienceDateDesktop = styled(ExperienceDate)`
   align-items: center;
   justify-content: center;
   height: ${({ theme }) => theme.spacings.medium};
+
   @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
     display: none;
   }

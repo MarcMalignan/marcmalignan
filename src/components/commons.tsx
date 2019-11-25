@@ -33,7 +33,11 @@ export const Paragraph = styled.p`
   }
 `;
 
-export const ParagraphInsert = styled(Paragraph)`
+export const ParagraphInsert = styled.div`
+  margin-bottom: ${({ theme }) => theme.spacings.small};
   padding: ${({ theme }) => theme.spacings.small} 0;
-  line-height: initial;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
