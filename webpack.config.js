@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
   .default;
 const path = require('path');
@@ -38,7 +39,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              outputPath: '/images/',
+              outputPath: './static/images/',
             },
           },
           {
@@ -52,6 +53,24 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/index.ejs',
+    }),
+    new FaviconsWebpackPlugin({
+      logo: './public/images/favicon.png',
+      prefix: 'static/favicons/',
+      favicons: {
+        background: '#fa7268',
+        theme_color: '#fa7268',
+      },
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: true,
+        coast: true,
+        favicons: true,
+        firefox: true,
+        windows: false,
+        yandex: false,
+      },
     }),
   ],
   devServer: {
