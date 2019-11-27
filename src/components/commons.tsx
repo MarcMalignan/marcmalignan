@@ -41,3 +41,14 @@ export const ParagraphInsert = styled.div`
     margin-bottom: 0;
   }
 `;
+
+export const Button = styled.button`
+  padding: ${({ theme }) => `${theme.spacings.small} ${theme.spacings.medium}`};
+  background: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.colors.fontSecondary};
+  border: none;
+  outline: none;
+  font-family: ${({ theme }) => theme.fonts.text};
+  font-size: 1em;
+  cursor: pointer;
+`;

@@ -1,19 +1,39 @@
-import React, { FC } from 'react';
-import { ParagraphInsert } from '../../components/commons';
+import React, { FC, useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Button, ParagraphInsert } from '../../components/commons';
 import { Paragraphs } from '../../components/Paragraphs';
 import { styled } from '../../style/theme';
 import { Section } from '../Section';
 import { experienceData, IExperience } from './experience.data';
 import { ExperienceCard } from './ExperienceCard';
 
-export const Experience: FC<{}> = () => (
-  <Section id="experience">
-    <Paragraphs translationKey="experience.text" />
-    <ParagraphInsert>
-      <Timeline>{experienceData.map(renderTimelineItem)}</Timeline>
-    </ParagraphInsert>
-  </Section>
-);
+const NB_INCREMENT = 5;
+
+export const Experience: FC<{}> = () => {
+  const { t } = useTranslation();
+  const [nbToShow, setNbToShow] = useState(NB_INCREMENT);
+
+  const increaseNbToShow = useCallback(
+    () => setNbToShow(nbToShow + NB_INCREMENT),
+    [nbToShow],
+  );
+
+  return (
+    <Section id="experience">
+      <Paragraphs translationKey="experience.text" />
+      <ParagraphInsert>
+        <Timeline>
+          {experienceData.slice(0, nbToShow).map(renderTimelineItem)}
+          {nbToShow < experienceData.length ? (
+            <ShowMoreButton onClick={increaseNbToShow}>
+              {t('experience.showMore')}
+            </ShowMoreButton>
+          ) : null}
+        </Timeline>
+      </ParagraphInsert>
+    </Section>
+  );
+};
 
 const renderTimelineItem = (experience: IExperience, index: number) => (
   <ExperienceWrapper key={experience.id} isEvent={!experience.startDate}>
@@ -55,4 +75,10 @@ const ExperienceWrapper = styled.div<{
   &:last-child {
     margin-bottom: 0;
   }
+`;
+
+const ShowMoreButton = styled(Button)`
+  position: relative;
+  display: block;
+  margin: 0 auto;
 `;

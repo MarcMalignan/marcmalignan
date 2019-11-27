@@ -63,6 +63,7 @@ export const enTranslations = {
         seo: 'SEO',
         uxui: 'UX/UI',
       },
+      showMore: 'Show more...',
     },
     contact: {
       text: [
