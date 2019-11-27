@@ -39,10 +39,10 @@ export const enTranslations = {
         'As for my training, I followed a classical engineering curriculum at the parisian <i>ECE</i> school, before finishing my studies at the english <i>Staffordshire University</i> where I could focus fully on development.',
       ],
       descriptions: {
+        marc: 'Personal project: redesign of my website',
         meetic: 'Web/native matchmaking app',
         rf: "Redesign of the journalists' back-office",
-        dimitri:
-          'Personal project&nbsp;: showcase website for my brother (pianist)',
+        dimitri: 'Personal project: showcase website for my brother (pianist)',
         pmu: 'Web horserace betting app',
         challenges: "Redesign of the group's two websites",
         stime: 'Several back-office web apps',

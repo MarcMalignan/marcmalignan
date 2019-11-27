@@ -17,6 +17,15 @@ export const experienceData: IExperience[] = [
     startDate: '2019-11-01',
   }, */
   {
+    id: 'marc',
+    title: 'MarcMalignan.com',
+    link: 'https://github.com/MarcMalignan/marcmalignan',
+    techTags: ['TypeScript', 'React', 'Styled-components', 'ESLint', 'Webpack'],
+    contextTags: ['fromScratch', 'public', 'uxui'],
+    startDate: '2019-11-01',
+    endDate: '2019-11-01',
+  },
+  {
     id: 'meetic',
     title: 'Meetic',
     subtitle: 'Affiny',

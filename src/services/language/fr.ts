@@ -13,7 +13,7 @@ export const frTranslations = {
       intro: [
         'Bonjour et bienvenue sur mon site&nbsp;!',
         "Je m'appelle <i>Marc Malignan</i> et je suis suis <i>développeur front-end</i> à Paris depuis 8 ans.",
-        "Vous voyez les icônes en-dessous&nbsp;? Ça c'est mon travail&nbsp;: je crée des <i>applications web desktop/mobile</i> pour des clients aussi divers que variés. J'aime les challenges, j'aime la nouveauté, je suis branché <i>produit</i>, <i>design d'interfaces</i>, <i>expérience utilisateur</i>... Si ces termes vous parlent, c'est que vous êtes au bon endroit&nbsp;!",
+        "Vous voyez les icônes en-dessous&nbsp;? Ça c'est mon travail\n: je crée des <i>applications web desktop/mobile</i> pour des clients aussi divers que variés. J'aime les challenges, j'aime la nouveauté, je suis branché <i>produit</i>, <i>design d'interfaces</i>, <i>expérience utilisateur</i>... Si ces termes vous parlent, c'est que vous êtes au bon endroit&nbsp;!",
       ],
       text: [
         "Convenons-en, Linkedin c'est pratique pour rester en contact avec son réseau professionnel mais c'est très impersonnel et ça ne reflête pas vraiment la <i>personnalité</i> derrière le CV... C'est pourquoi j'ai créé ce site&nbsp;: mi <i>site vitrine</i> de mon travail, mi <i>CV en ligne</i> pour regrouper toutes les informations me concernant.",
@@ -39,10 +39,10 @@ export const frTranslations = {
         "Côté formation j'ai suivi un cursus classique d'école d'ingénieur à l'<i>ECE Paris</i> avant de terminer mes études dans l'université anglaise de <i>Staffordshire</i> où j'ai pu me focaliser pleinement sur le développement.",
       ],
       descriptions: {
+        marc: 'Projet personnel\n: refonte de mon site',
         meetic: 'Application web/native de matchmaking',
         rf: 'Refonte du back-office des journalistes',
-        dimitri:
-          'Projet personnel&nbsp;: site vitrine pour mon frère (pianiste)',
+        dimitri: 'Projet personnel\n: site vitrine pour mon frère (pianiste)',
         pmu: 'Application web de paris hippiques',
         challenges: 'Refonte des deux sites media du groupe',
         stime: 'Plusieurs applications web de back-office',
