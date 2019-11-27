@@ -1,7 +1,7 @@
 import baseStyled, { ThemedStyledInterface } from 'styled-components';
 
 const colors = {
-  accent: '#fa7268',
+  accent: process.env.THEME,
   accent2: '#eee',
   background: '#fafafa',
   fontPrimary: '#222',

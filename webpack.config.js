@@ -3,9 +3,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
   .default;
+const webpack = require('webpack');
+const dotenv = require('dotenv');
 const path = require('path');
 
 const styledComponentsTransformer = createStyledComponentsTransformer();
+const env = dotenv.config().parsed;
 
 module.exports = {
   entry: './src/index.tsx',
@@ -58,19 +61,23 @@ module.exports = {
       logo: './public/images/favicon.png',
       prefix: 'static/favicons/',
       favicons: {
-        background: '#fa7268',
-        theme_color: '#fa7268',
+        appName: 'Marc Malignan',
+        background: env.THEME,
+        theme_color: env.THEME,
       },
       icons: {
         android: true,
         appleIcon: true,
         appleStartup: true,
-        coast: true,
+        coast: false,
         favicons: true,
         firefox: true,
         windows: false,
         yandex: false,
       },
+    }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(env),
     }),
   ],
   devServer: {
