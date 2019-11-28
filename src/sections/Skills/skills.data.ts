@@ -16,22 +16,22 @@ export const skillsData: ISkillGroup[] = [
     mainRow: [
       {
         name: 'HTML 5',
-        logo: 'html.svg',
+        logo: 'Html',
         link: 'https://www.w3schools.com/html/default.asp',
       },
       {
         name: 'CSS 3',
-        logo: 'css.svg',
+        logo: 'Css',
         link: 'https://www.w3schools.com/css/default.asp',
       },
       {
         name: 'JavaScript',
-        logo: 'js.svg',
+        logo: 'Js',
         link: 'https://www.w3schools.com/js/default.asp',
       },
       {
         name: 'TypeScript',
-        logo: 'ts.svg',
+        logo: 'Ts',
         link: 'https://www.typescriptlang.org/',
       },
     ],
@@ -42,29 +42,29 @@ export const skillsData: ISkillGroup[] = [
     mainRow: [
       {
         name: 'React',
-        logo: 'react.svg',
+        logo: 'React',
         link: 'https://reactjs.org/',
       },
       {
         name: 'NodeJS',
-        logo: 'node.svg',
+        logo: 'Node',
         link: 'https://nodejs.org/en/',
       },
     ],
     otherRow: [
       {
         name: 'Backbone',
-        logo: 'backbone.svg',
+        logo: 'Backbone',
         link: 'https://backbonejs.org/',
       },
       {
         name: 'AngularJS',
-        logo: 'angular.svg',
+        logo: 'Angular',
         link: 'https://angular.io/',
       },
       {
         name: 'jQuery',
-        logo: 'jquery.svg',
+        logo: 'Jquery',
         link: 'https://jquery.com/',
       },
     ],
@@ -74,34 +74,34 @@ export const skillsData: ISkillGroup[] = [
     mainRow: [
       {
         name: 'Jest',
-        logo: 'jest.svg',
+        logo: 'Jest',
         link: 'https://jestjs.io/',
       },
       {
         name: 'ESLint',
-        logo: 'eslint.svg',
+        logo: 'Eslint',
         link: 'https://eslint.org/',
       },
       {
         name: 'Prettier',
-        logo: 'prettier.svg',
+        logo: 'Prettier',
         link: 'https://prettier.io/',
       },
     ],
     otherRow: [
       {
         name: 'NPM',
-        logo: 'npm.svg',
+        logo: 'Npm',
         link: 'https://www.npmjs.com/',
       },
       {
         name: 'Yarn',
-        logo: 'yarn.svg',
+        logo: 'Yarn',
         link: 'https://yarnpkg.com/lang/en/',
       },
       {
         name: 'Webpack',
-        logo: 'webpack.svg',
+        logo: 'Webpack',
         link: 'https://webpack.js.org/',
       },
     ],

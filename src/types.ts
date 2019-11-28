@@ -4,3 +4,7 @@ export enum ENavItems {
   EXPERIENCE = 'experience',
   CONTACT = 'contact',
 }
+
+export interface ISvgProps {
+  color: string;
+}

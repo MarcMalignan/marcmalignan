@@ -1,10 +1,10 @@
 import React, { FC, Fragment } from 'react';
 import { ParagraphInsert } from '../../components/commons';
+import { Logo } from '../../components/Logo';
 import { Paragraphs } from '../../components/Paragraphs';
 import { styled } from '../../style/theme';
 import { Section } from '../Section';
 import { ISkill, ISkillGroup, skillsData } from './skills.data';
-import { Logo } from '../../components/Logo';
 
 export const Skills: FC<{}> = () => (
   <Section id="skills">

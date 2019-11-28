@@ -23,17 +23,17 @@ export const Contact: FC<{}> = () => (
       <LinksContainer>
         <Logo
           name="Linkedin"
-          logo="linkedin.svg"
+          logo="Linkedin"
           link="https://www.linkedin.com/in/marc-malignan-b3522b80/"
         />
         <Logo
           name="GitHub"
-          logo="github.svg"
+          logo="Github"
           link="https://github.com/MarcMalignan"
         />
         <Logo
           name="Codepen"
-          logo="codepen.svg"
+          logo="Codepen"
           link="https://codepen.io/MarcMalignan"
         />
       </LinksContainer>

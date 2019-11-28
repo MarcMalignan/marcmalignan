@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { styled } from '../style/theme';
+import { styled } from '../../style/theme';
 
 interface ILogoProps {
   isSmall?: boolean;
@@ -9,11 +9,13 @@ interface ILogoProps {
 }
 
 export const Logo: FC<ILogoProps> = ({ isSmall, link, logo, name }) => {
-  const logoSrc = require(`../../public/images/logos/${logo}`);
+  const LogoSvg = require(`./svg/${logo}.tsx`).default;
 
   return (
     <LogoLink href={link} target="_blank">
-      <LogoImg alt={name} title={name} src={logoSrc} isSmall={isSmall} />
+      <LogoContainer title={name} isSmall={isSmall}>
+        <LogoSvg color={process.env.THEME} />
+      </LogoContainer>
     </LogoLink>
   );
 };
@@ -24,7 +26,7 @@ const LogoLink = styled.a`
 `;
 
 /* eslint-disable @typescript-eslint/indent */
-export const LogoImg = styled.img<{ isSmall?: boolean }>`
+const LogoContainer = styled.div<{ isSmall?: boolean }>`
   display: block;
   height: ${({ isSmall, theme }) =>
     isSmall ? theme.iconSizes.small : theme.iconSizes.large};
@@ -32,5 +34,10 @@ export const LogoImg = styled.img<{ isSmall?: boolean }>`
   @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
     height: ${({ isSmall, theme }) =>
       isSmall ? theme.iconSizes.small : theme.iconSizes.medium};
+  }
+
+  svg {
+    height: inherit;
+    width: auto;
   }
 `;
