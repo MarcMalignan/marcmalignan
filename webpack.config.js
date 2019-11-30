@@ -3,6 +3,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const createStyledComponentsTransformer = require('typescript-plugin-styled-components')
   .default;
+// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+//   .BundleAnalyzerPlugin;
 const webpack = require('webpack');
 const dotenv = require('dotenv');
 const path = require('path');
@@ -79,6 +81,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(env),
     }),
+    // new BundleAnalyzerPlugin(),
   ],
   devServer: {
     contentBase: path.resolve(__dirname, 'dist'),

@@ -1,8 +1,6 @@
-import {
-  faDesktop,
-  faMobileAlt,
-  faTabletAlt,
-} from '@fortawesome/free-solid-svg-icons';
+import { faDesktop } from '@fortawesome/free-solid-svg-icons/faDesktop';
+import { faMobileAlt } from '@fortawesome/free-solid-svg-icons/faMobileAlt';
+import { faTabletAlt } from '@fortawesome/free-solid-svg-icons/faTabletAlt';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { FC } from 'react';
 import { ParagraphInsert } from '../../components/commons';
