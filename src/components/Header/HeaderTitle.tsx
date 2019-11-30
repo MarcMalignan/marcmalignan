@@ -38,6 +38,7 @@ const Title = styled.h1`
   font-family: ${({ theme }) => theme.fonts.title};
   font-weight: 600;
   cursor: pointer;
+  user-select: none;
 `;
 const TitleFull = styled(Title)`
   padding: ${({ theme }) => theme.spacings.large};
