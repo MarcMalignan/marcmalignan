@@ -32,9 +32,11 @@ const renderSkill = (isSmall?: boolean) => ({ link, logo, name }: ISkill) => (
 );
 
 const SkillsRow = styled.div`
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
   margin-bottom: ${({ theme }) => theme.spacings.medium};
+  text-align: center;
+  white-space: nowrap;
 
   &:last-child {
     margin-bottom: 0;

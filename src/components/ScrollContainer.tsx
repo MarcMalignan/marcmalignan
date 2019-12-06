@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import { AppContext } from '../services/context';
 import { styled } from '../style/theme';
-import { ENavItems } from '../types';
+import { TNavItems } from '../types';
 
 export const ScrollContainer: FC<{}> = ({ children }) => {
   const { setCurrentNav, setScrollContainer } = useContext(AppContext);
@@ -17,7 +17,7 @@ export const ScrollContainer: FC<{}> = ({ children }) => {
 
   const onScroll = useCallback(() => {
     const visibleSectionId = getVisibleSectionId();
-    setCurrentNav(visibleSectionId as ENavItems);
+    setCurrentNav(visibleSectionId as TNavItems);
   }, []);
 
   return (

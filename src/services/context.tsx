@@ -1,15 +1,16 @@
 import React, { createContext, FC, useState } from 'react';
-import { ENavItems } from '../types';
+import { NAV_ITEMS } from '../helpers/constants';
+import { TNavItems } from '../types';
 
 export interface IAppContext {
-  currentNav: ENavItems;
-  setCurrentNav: (nav: ENavItems) => void;
+  currentNav: TNavItems;
+  setCurrentNav: (nav: TNavItems) => void;
   scrollContainer: HTMLDivElement;
   setScrollContainer: (el: HTMLDivElement) => void;
 }
 
 const defaultContext: IAppContext = {
-  currentNav: ENavItems.ABOUT,
+  currentNav: NAV_ITEMS[0],
   setCurrentNav: () => {},
   scrollContainer: null,
   setScrollContainer: () => {},
@@ -25,7 +26,7 @@ export const AppContextProvider: FC<{}> = ({ children }) => {
 
   const contextValue = {
     currentNav,
-    setCurrentNav: (nav: ENavItems) => setCurrentNav(nav),
+    setCurrentNav: (nav: TNavItems) => setCurrentNav(nav),
     scrollContainer,
     setScrollContainer: (el: HTMLDivElement) => setScrollContainer(el),
   };

@@ -3,8 +3,6 @@ import { ISvgProps } from '../../../types';
 
 const Svg: FC<ISvgProps> = () => (
   <svg
-    width="102.37mm"
-    height="144.5mm"
     version="1.1"
     viewBox="0 0 362.73 512"
     xmlns="http://www.w3.org/2000/svg"

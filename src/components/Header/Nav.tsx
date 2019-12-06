@@ -1,8 +1,9 @@
 import React, { FC, useCallback, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
+import { NAV_ITEMS } from '../../helpers/constants';
 import { AppContext } from '../../services/context';
 import { styled } from '../../style/theme';
-import { ENavItems } from '../../types';
+import { TNavItems } from '../../types';
 
 interface INavProps {
   className?: string;
@@ -18,8 +19,8 @@ export const Nav: FC<INavProps> = ({ className, isCollapsed = false }) => {
   const { currentNav, scrollContainer } = useContext(AppContext);
 
   const onNavItemClick = useCallback(
-    (navItem: ENavItems) => () => {
-      if (navItem === ENavItems.ABOUT) {
+    (navItem: TNavItems) => () => {
+      if (navItem === NAV_ITEMS[0]) {
         scrollContainer.scrollTo(0, 0);
       } else {
         scrollToSection(navItem);
@@ -29,7 +30,7 @@ export const Nav: FC<INavProps> = ({ className, isCollapsed = false }) => {
   );
 
   const renderNavItem = useCallback(
-    (navItem: ENavItems) => {
+    (navItem: TNavItems) => {
       const NavItemElement = isCollapsed ? NavItemCollapsed : NavItemFull;
       return (
         <NavItemElement
@@ -46,7 +47,7 @@ export const Nav: FC<INavProps> = ({ className, isCollapsed = false }) => {
 
   return (
     <NavContainer className={className}>
-      {Object.values(ENavItems).map(renderNavItem)}
+      {NAV_ITEMS.map(renderNavItem)}
     </NavContainer>
   );
 };

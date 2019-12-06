@@ -2,13 +2,7 @@ import React, { FC } from 'react';
 import { ISvgProps } from '../../../types';
 
 const Svg: FC<ISvgProps> = ({ color }) => (
-  <svg
-    width="210px"
-    height="210px"
-    viewBox="0 0 210 210"
-    version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg viewBox="0 0 210 210" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>prettier-icon-light</title>
     <desc>Created with sketchtool.</desc>
     <defs />

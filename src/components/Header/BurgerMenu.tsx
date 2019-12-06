@@ -33,23 +33,23 @@ const BURGER_LINE_SPACING = BURGER_BUTTON_SIZE / 5;
 const BurgerMenuContainer = styled.div``;
 
 const BurgerButton = styled.div`
+  position: relative;
   width: ${BURGER_BUTTON_SIZE}px;
   height: ${BURGER_BUTTON_SIZE}px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  padding: ${({ theme }) => theme.spacings.tiny};
   background: ${({ theme }) => theme.colors.accent};
 `;
 
 const BurgerButtonLine = styled.div<{ isOpen: boolean }>`
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: ${({ theme }) => theme.spacings.tiny};
+  right: ${({ theme }) => theme.spacings.tiny};
   display: block;
   height: ${({ theme }) => theme.spacings.line};
-  width: 100%;
   background: ${({ theme }) => theme.colors.background};
-  transform: rotate(${({ isOpen }) => (isOpen ? '45deg' : '0')});
   transition: all ${({ theme }) => theme.speeds.fast};
+  transform: translateY(-50%)
+    rotate(${({ isOpen }) => (isOpen ? '45deg' : '0')});
 
   &:before,
   &:after {
@@ -59,7 +59,6 @@ const BurgerButtonLine = styled.div<{ isOpen: boolean }>`
     width: 100%;
     height: inherit;
     background: inherit;
-    transform: rotateX(45deg);
     transition: inherit;
     transform: rotate(${({ isOpen }) => (isOpen ? '-90deg' : '0')});
   }

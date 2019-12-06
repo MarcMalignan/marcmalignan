@@ -21,7 +21,7 @@ export const Logo: FC<ILogoProps> = ({ isSmall, link, logo, name }) => {
 };
 
 const LogoLink = styled.a`
-  display: block;
+  display: inline-block;
   margin: 0 ${({ theme }) => theme.spacings.small};
 `;
 
