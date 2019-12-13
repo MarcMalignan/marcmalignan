@@ -10,9 +10,6 @@ const SCROLLBAR_WIDTH = 2;
 const SCROLLBAR_SPACING = 5;
 
 export const GlobalStyle = createGlobalStyle<IGlobalStyle>`
-  @import url('https://fonts.googleapis.com/css?family=Josefin+Slab:600&display=swap');
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-
   * {
     box-sizing: border-box;
   }
