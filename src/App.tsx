@@ -49,7 +49,7 @@ export class App extends Component<{}> {
 const CONTENT_SPACING_TOP = 300;
 
 const BorderContainer = styled.div`
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
