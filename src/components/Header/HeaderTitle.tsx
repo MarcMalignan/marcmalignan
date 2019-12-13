@@ -1,7 +1,7 @@
 import React, { FC, useCallback, useContext } from 'react';
-import { styled } from '../../style/theme';
-import { ColoredFirstLetter } from '../ColoredFirstLetter';
 import { AppContext } from '../../services/context';
+import { styled } from '../../style/theme';
+import { ColoredFirstLetter } from '../commons';
 
 interface IHeaderTitleProps {
   className?: string;
@@ -25,9 +25,9 @@ export const HeaderTitle: FC<IHeaderTitleProps> = ({
   return (
     <div className={className}>
       <TitleElement onClick={scrollToTop}>
-        <ColoredFirstLetter label="Marc" />
+        <ColoredFirstLetter>Marc</ColoredFirstLetter>
         {isCollapsed ? ' ' : <br />}
-        <ColoredFirstLetter label="Malignan" />
+        <ColoredFirstLetter>Malignan</ColoredFirstLetter>
       </TitleElement>
     </div>
   );

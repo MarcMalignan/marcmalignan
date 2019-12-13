@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ColoredFirstLetter } from '../components/ColoredFirstLetter';
-import { Title } from '../components/commons';
+import { ColoredFirstLetter, Title } from '../components/commons';
 import { styled } from '../style/theme';
 
 interface ISectionProps {
@@ -14,7 +13,7 @@ export const Section: FC<ISectionProps> = ({ children, id }) => {
   return (
     <SectionContainer id={id} className="section">
       <Title>
-        <ColoredFirstLetter label={t(`nav.${id}`)} />
+        <ColoredFirstLetter>{t(`nav.${id}`)}</ColoredFirstLetter>
       </Title>
       {children}
     </SectionContainer>

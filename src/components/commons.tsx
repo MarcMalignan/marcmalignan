@@ -52,3 +52,10 @@ export const Button = styled.button`
   font-size: 1em;
   cursor: pointer;
 `;
+
+export const ColoredFirstLetter = styled.div`
+  display: inline-block;
+  &::first-letter {
+    color: ${({ theme }) => theme.colors.accent};
+  }
+`;

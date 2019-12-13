@@ -4,7 +4,7 @@ export const frTranslations = {
       since: 'depuis',
     },
     nav: {
-      about: 'A propos',
+      about: 'À propos',
       skills: 'Compétences',
       experience: 'Expérience',
       contact: 'Contact',
