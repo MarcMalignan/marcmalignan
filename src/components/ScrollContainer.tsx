@@ -1,10 +1,11 @@
 import React, {
+  createRef,
   FC,
   useCallback,
   useContext,
   useEffect,
-  createRef,
 } from 'react';
+import { NAV_ITEMS } from '../helpers/constants';
 import { AppContext } from '../services/context';
 import { styled } from '../style/theme';
 import { TNavItems } from '../types';
@@ -16,9 +17,13 @@ export const ScrollContainer: FC<{}> = ({ children }) => {
   useEffect(() => setScrollContainer(ref.current), []);
 
   const onScroll = useCallback(() => {
-    const visibleSectionId = getVisibleSectionId();
-    setCurrentNav(visibleSectionId as TNavItems);
-  }, []);
+    if (ref.current && ref.current.scrollTop === 0) {
+      setCurrentNav(NAV_ITEMS[0]);
+    } else {
+      const visibleSectionId = getVisibleSectionId();
+      setCurrentNav(visibleSectionId as TNavItems);
+    }
+  }, [ref]);
 
   return (
     <Container id="scrollContainer" onScroll={onScroll} ref={ref}>
