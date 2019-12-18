@@ -2,7 +2,7 @@ import React, { FC, useCallback, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NAV_ITEMS } from '../../helpers/constants';
 import { AppContext } from '../../services/context';
-import { styled } from '../../style/theme';
+import { styled } from '../../style/styled';
 import { TNavItems } from '../../types';
 
 interface INavProps {
@@ -65,12 +65,11 @@ const NavItem = styled.div<{ isSelected?: boolean }>`
   font-weight: 600;
   white-space: nowrap;
   cursor: pointer;
-  transition: all ${({ theme }) => theme.speeds.normal};
   border-bottom: ${({ theme }) => theme.spacings.line} solid;
   border-color: ${({ isSelected, theme }) =>
     isSelected ? theme.colors.accent : theme.colors.accent2};
   color: ${({ isSelected, theme }) =>
-    isSelected ? theme.colors.accent : theme.colors.fontPrimary};
+    isSelected ? theme.colors.accent : theme.colors.font};
 
   &:hover {
     color: ${({ theme }) => theme.colors.accent};

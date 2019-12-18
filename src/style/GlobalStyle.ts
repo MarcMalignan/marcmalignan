@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/indent */
 import { createGlobalStyle } from 'styled-components';
-import { TAppTheme } from './theme';
+import { IAppTheme } from './themes/types';
 
 interface IGlobalStyle {
-  theme: TAppTheme;
+  theme: IAppTheme;
 }
 
 const SCROLLBAR_WIDTH = 2;
@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle<IGlobalStyle>`
     margin: 0;
     background: ${({ theme }) => theme.colors.background};
     font-family: ${({ theme }) => theme.fonts.text};
-    color: ${({ theme }) => theme.colors.fontPrimary};
+    color: ${({ theme }) => theme.colors.font};
   }
 
   a {

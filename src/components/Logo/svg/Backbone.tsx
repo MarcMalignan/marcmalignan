@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { ISvgProps } from '../../../types';
 
-const Svg: FC<ISvgProps> = ({ color }) => (
+const Svg: FC<ISvgProps> = ({ colors: { accent, font } }) => (
   <svg
     version="1.1"
     viewBox="0 0 129.37 160.77"
@@ -13,22 +13,22 @@ const Svg: FC<ISvgProps> = ({ color }) => (
         fill="#fff"
         fillRule="evenodd"
       >
-        <g stroke="#222">
+        <g stroke={font}>
           <path
             d="m0 0v485l361 205.79v-139.88l-241.5-137.67v-216.24l241.5 137.67v-128.88z"
-            fill="#222"
+            fill={font}
           />
           <path
             d="m722 0v485l-361 205.79v-139.88l241.5-137.67v-216.24l-241.5 137.67v-128.88z"
-            fill={color}
+            fill={accent}
           />
           <path
             d="m0 896.79v-485l361-205.79v139.88l-241.5 137.67v205.24l241.5-137.67v139.88z"
-            fill={color}
+            fill={accent}
           />
           <path
             d="m722 896.79v-485l-361-205.79v139.88l241.5 137.67v205.24l-241.5-137.67v139.88z"
-            fill="#222"
+            fill={font}
           />
         </g>
       </g>

@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useContext } from 'react';
 import { AppContext } from '../../services/context';
-import { styled } from '../../style/theme';
+import { styled } from '../../style/styled';
 import { ColoredFirstLetter } from '../commons';
 
 interface IHeaderTitleProps {

@@ -1,7 +1,8 @@
 import React, { FC, useCallback, useState } from 'react';
-import { styled } from '../../style/theme';
+import { styled } from '../../style/styled';
 import { Language } from './Language';
 import { Nav } from './Nav';
+import { ThemeSelector } from './ThemeSelector';
 
 interface IBurgerMenuProps {
   className?: string;
@@ -21,7 +22,10 @@ export const BurgerMenu: FC<IBurgerMenuProps> = ({ className }) => {
       </BurgerButton>
       <Menu isOpen={isOpen} onClick={toggle}>
         <Nav />
-        <StyledLanguage />
+        <BottomContainer>
+          <ThemeSelector />
+          <Language />
+        </BottomContainer>
       </Menu>
     </BurgerMenuContainer>
   );
@@ -46,7 +50,7 @@ const BurgerButtonLine = styled.div<{ isOpen: boolean }>`
   right: ${({ theme }) => theme.spacings.tiny};
   display: block;
   height: ${({ theme }) => theme.spacings.line};
-  background: ${({ theme }) => theme.colors.background};
+  background: ${({ theme }) => theme.colors.fontAccent};
   transition: all ${({ theme }) => theme.speeds.fast};
   transform: translateY(-50%)
     rotate(${({ isOpen }) => (isOpen ? '45deg' : '0')});
@@ -88,6 +92,7 @@ const Menu = styled.div<{ isOpen: boolean }>`
   transition: opacity ${({ theme }) => theme.speeds.fast};
 `;
 
-const StyledLanguage = styled(Language)`
-  justify-content: center;
+const BottomContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
 `;

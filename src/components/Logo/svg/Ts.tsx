@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { ISvgProps } from '../../../types';
 
-const Svg: FC<ISvgProps> = () => (
+const Svg: FC<ISvgProps> = ({ colors: { font } }) => (
   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 630 630">
     <g
       transform="translate(0.000000,630.000000) scale(0.100000,-0.100000)"
-      fill="#222"
+      fill={font}
       stroke="none"
     >
       <path

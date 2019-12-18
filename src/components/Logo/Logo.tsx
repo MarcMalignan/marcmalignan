@@ -1,24 +1,29 @@
 import React, { FC } from 'react';
-import { styled } from '../../style/theme';
+import { withTheme } from 'styled-components';
+import { styled } from '../../style/styled';
+import { IAppTheme } from '../../style/themes/types';
 
 interface ILogoProps {
   isSmall?: boolean;
   link: string;
   logo: string;
   name: string;
+  theme: IAppTheme;
 }
 
-export const Logo: FC<ILogoProps> = ({ isSmall, link, logo, name }) => {
+const BareLogo: FC<ILogoProps> = ({ isSmall, link, logo, name, theme }) => {
   const LogoSvg = require(`./svg/${logo}.tsx`).default;
 
   return (
     <LogoLink href={link} target="_blank">
       <LogoContainer title={name} isSmall={isSmall}>
-        <LogoSvg color={process.env.THEME} />
+        <LogoSvg colors={theme.colors} />
       </LogoContainer>
     </LogoLink>
   );
 };
+
+export const Logo = withTheme(BareLogo);
 
 const LogoLink = styled.a`
   display: inline-block;

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { FC } from 'react';
 import { ParagraphInsert } from '../../components/commons';
 import { Paragraphs } from '../../components/Paragraphs';
-import { styled } from '../../style/theme';
+import { styled } from '../../style/styled';
 import { Section } from '../Section';
 
 export const About: FC<{}> = () => (

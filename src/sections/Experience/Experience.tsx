@@ -2,7 +2,7 @@ import React, { FC, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, ParagraphInsert } from '../../components/commons';
 import { Paragraphs } from '../../components/Paragraphs';
-import { styled } from '../../style/theme';
+import { styled } from '../../style/styled';
 import { Section } from '../Section';
 import { experienceData, IExperience } from './experience.data';
 import { ExperienceCard } from './ExperienceCard';

@@ -1,4 +1,4 @@
-import { styled } from '../style/theme';
+import { styled } from '../style/styled';
 
 export const ContentWidth = styled.div`
   max-width: 900px;
@@ -45,7 +45,7 @@ export const ParagraphInsert = styled.div`
 export const Button = styled.button`
   padding: ${({ theme }) => `${theme.spacings.small} ${theme.spacings.medium}`};
   background: ${({ theme }) => theme.colors.accent};
-  color: ${({ theme }) => theme.colors.fontSecondary};
+  color: ${({ theme }) => theme.colors.fontAccent};
   border: none;
   outline: none;
   font-family: ${({ theme }) => theme.fonts.text};

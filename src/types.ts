@@ -1,5 +1,5 @@
+import { IAppTheme } from './style/themes/types';
+
 export type TNavItems = 'about' | 'skills' | 'experience' | 'contact';
 
-export interface ISvgProps {
-  color: string;
-}
+export type ISvgProps = Pick<IAppTheme, 'colors'>;

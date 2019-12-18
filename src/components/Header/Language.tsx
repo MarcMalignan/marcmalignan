@@ -1,7 +1,7 @@
 import React, { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { LANGUAGES } from '../../services/language';
-import { styled } from '../../style/theme';
+import { styled } from '../../style/styled';
 
 interface ILanguageProps {
   className?: string;
@@ -17,12 +17,14 @@ export const Language: FC<ILanguageProps> = ({ className }) => {
   return (
     <LanguageContainer className={className}>
       <LanguageButton
+        title="Français"
         active={i18n.language === LANGUAGES.FR}
         onClick={changeLanguage(LANGUAGES.FR)}
       >
         FR
       </LanguageButton>
       <LanguageButton
+        title="English"
         active={i18n.language === LANGUAGES.EN}
         onClick={changeLanguage(LANGUAGES.EN)}
       >
@@ -42,7 +44,7 @@ const LanguageButton = styled.div<{ active?: boolean }>`
   margin-right: ${({ theme }) => theme.spacings.tiny};
   line-height: ${({ theme }) => theme.spacings.medium};
   color: ${({ active, theme }) =>
-    active ? theme.colors.fontSecondary : 'inherit'};
+    active ? theme.colors.fontAccent : 'inherit'};
   background: ${({ active, theme }) =>
     active ? theme.colors.accent : 'transparent'};
   text-align: center;

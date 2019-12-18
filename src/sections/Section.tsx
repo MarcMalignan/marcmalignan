@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ColoredFirstLetter, Title } from '../components/commons';
-import { styled } from '../style/theme';
+import { styled } from '../style/styled';
 
 interface ISectionProps {
   id: string;

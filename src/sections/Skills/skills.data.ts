@@ -90,19 +90,20 @@ export const skillsData: ISkillGroup[] = [
     ],
     otherRow: [
       {
-        name: 'NPM',
-        logo: 'Npm',
-        link: 'https://www.npmjs.com/',
+        name: 'Webpack',
+        logo: 'Webpack',
+        link: 'https://webpack.js.org/',
       },
+
       {
         name: 'Yarn',
         logo: 'Yarn',
         link: 'https://yarnpkg.com/lang/en/',
       },
       {
-        name: 'Webpack',
-        logo: 'Webpack',
-        link: 'https://webpack.js.org/',
+        name: 'NPM',
+        logo: 'Npm',
+        link: 'https://www.npmjs.com/',
       },
     ],
   },

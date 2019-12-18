@@ -9,6 +9,10 @@ export const frTranslations = {
       experience: 'Expérience',
       contact: 'Contact',
     },
+    commons: {
+      lightTheme: 'Thème clair',
+      darkTheme: 'Thème sombre',
+    },
     about: {
       intro: [
         'Bonjour et bienvenue sur mon site&nbsp;!',

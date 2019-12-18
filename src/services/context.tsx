@@ -7,6 +7,8 @@ export interface IAppContext {
   setCurrentNav: (nav: TNavItems) => void;
   scrollContainer: HTMLDivElement;
   setScrollContainer: (el: HTMLDivElement) => void;
+  darkMode: boolean;
+  setDarkMode: (bool: boolean) => void;
 }
 
 const defaultContext: IAppContext = {
@@ -14,6 +16,8 @@ const defaultContext: IAppContext = {
   setCurrentNav: () => {},
   scrollContainer: null,
   setScrollContainer: () => {},
+  darkMode: false,
+  setDarkMode: () => {},
 };
 
 export const AppContext = createContext(defaultContext);
@@ -23,12 +27,15 @@ export const AppContextProvider: FC<{}> = ({ children }) => {
   const [scrollContainer, setScrollContainer] = useState(
     defaultContext.scrollContainer,
   );
+  const [darkMode, setDarkMode] = useState(defaultContext.darkMode);
 
   const contextValue = {
     currentNav,
     setCurrentNav: (nav: TNavItems) => setCurrentNav(nav),
     scrollContainer,
     setScrollContainer: (el: HTMLDivElement) => setScrollContainer(el),
+    darkMode,
+    setDarkMode: (bool: boolean) => setDarkMode(bool),
   };
 
   return (

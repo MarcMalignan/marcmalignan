@@ -9,6 +9,10 @@ export const enTranslations = {
       experience: 'Experience',
       contact: 'Contact',
     },
+    commons: {
+      lightTheme: 'Light theme',
+      darkTheme: 'Dark theme',
+    },
     about: {
       intro: [
         'Hi and welcome to my website!',

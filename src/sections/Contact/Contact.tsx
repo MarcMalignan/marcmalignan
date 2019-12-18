@@ -4,7 +4,7 @@ import React, { FC } from 'react';
 import { ParagraphInsert } from '../../components/commons';
 import { Logo } from '../../components/Logo';
 import { Paragraphs } from '../../components/Paragraphs';
-import { styled } from '../../style/theme';
+import { styled } from '../../style/styled';
 import { Section } from '../Section';
 
 export const Contact: FC<{}> = () => (

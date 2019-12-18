@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { styled } from '../style/theme';
+import { styled } from '../style/styled';
 import { ContentWidth } from './commons';
 
 export const Footer: FC<{}> = () => (

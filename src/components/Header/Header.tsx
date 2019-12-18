@@ -1,13 +1,15 @@
 import React, { FC } from 'react';
-import { styled } from '../../style/theme';
+import { styled } from '../../style/styled';
 import { ContentWidth } from '../commons';
 import { HeaderTitle } from './HeaderTitle';
 import { Language } from './Language';
 import { Nav } from './Nav';
+import { ThemeSelector } from './ThemeSelector';
 
 export const Header: FC<{}> = () => (
   <HeaderContainer>
     <HeaderContent>
+      <StyledThemeSelector />
       <StyledHeaderTitle />
       <StyledNav />
       <StyledLanguage />
@@ -40,6 +42,12 @@ const StyledHeaderTitle = styled(HeaderTitle)`
 const StyledNav = styled(Nav)`
   justify-content: center;
   margin: 0 auto;
+`;
+
+const StyledThemeSelector = styled(ThemeSelector)`
+  position: absolute;
+  top: ${({ theme }) => theme.spacings.small};
+  left: ${({ theme }) => theme.spacings.small};
 `;
 
 const StyledLanguage = styled(Language)`

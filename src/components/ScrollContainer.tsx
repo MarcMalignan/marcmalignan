@@ -7,7 +7,7 @@ import React, {
 } from 'react';
 import { NAV_ITEMS } from '../helpers/constants';
 import { AppContext } from '../services/context';
-import { styled } from '../style/theme';
+import { styled } from '../style/styled';
 import { TNavItems } from '../types';
 
 export const ScrollContainer: FC<{}> = ({ children }) => {

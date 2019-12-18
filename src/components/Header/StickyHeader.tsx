@@ -1,14 +1,16 @@
 import React, { FC } from 'react';
-import { styled } from '../../style/theme';
+import { styled } from '../../style/styled';
 import { BurgerMenu } from './BurgerMenu';
 import { HeaderTitle } from './HeaderTitle';
 import { Language } from './Language';
 import { Nav } from './Nav';
+import { ThemeSelector } from './ThemeSelector';
 
 export const StickyHeader: FC<{}> = () => (
   <StickyHeaderContainer>
     <StyledHeaderTitle isCollapsed />
     <StyledNav isCollapsed />
+    <StyledThemeSelector />
     <StyledLanguage />
     <StyledBurgerMenu />
   </StickyHeaderContainer>
@@ -42,6 +44,14 @@ const StyledHeaderTitle = styled(HeaderTitle)`
 
 const StyledNav = styled(Nav)`
   margin-right: ${({ theme }) => theme.spacings.large};
+
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    display: none;
+  }
+`;
+
+const StyledThemeSelector = styled(ThemeSelector)`
+  margin-right: ${({ theme }) => theme.spacings.medium};
 
   @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
     display: none;

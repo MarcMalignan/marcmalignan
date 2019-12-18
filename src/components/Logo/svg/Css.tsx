@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { ISvgProps } from '../../../types';
 
-const Svg: FC<ISvgProps> = () => (
+const Svg: FC<ISvgProps> = ({ colors: { background, font } }) => (
   <svg
     version="1.1"
     viewBox="0 0 362.73 512"
@@ -11,30 +11,30 @@ const Svg: FC<ISvgProps> = () => (
       <g transform="translate(119 276.36)">
         <polygon
           points="437.37 100.62 404.32 470.82 255.78 512 107.64 470.88 74.633 100.62"
-          fill="#222"
+          fill={font}
         />
         <polygon
           points="376.03 447.25 404.27 130.89 256 130.89 256 480.52"
-          fill="#222"
+          fill={font}
         />
         <polygon
           points="150.31 268.22 154.38 313.63 256 313.63 256 268.22"
-          fill="#ebebeb"
+          fill={background}
         />
         <polygon
           points="256 176.3 255.84 176.3 142.13 176.3 146.26 221.72 256 221.72"
-          fill="#ebebeb"
+          fill={background}
         />
         <polygon
           points="256 433.4 256 386.15 255.8 386.21 205.23 372.55 201.99 336.33 177.42 336.33 156.41 336.33 162.77 407.63 255.79 433.46"
-          fill="#ebebeb"
+          fill={background}
         />
-        <path d="m160 0h55v23h-32v23h32v23h-55z" />
-        <path d="m226 0h55v20h-32v4h32v46h-55v-21h32v-4h-32z" />
-        <path d="m292 0h55v20h-32v4h32v46h-55v-21h32v-4h-32z" />
+        <path d="m160 0h55v23h-32v23h32v23h-55z" fill={font} />
+        <path d="m226 0h55v20h-32v4h32v46h-55v-21h32v-4h-32z" fill={font} />
+        <path d="m292 0h55v20h-32v4h32v46h-55v-21h32v-4h-32z" fill={font} />
         <polygon
           points="311.76 313.63 306.49 372.52 255.84 386.19 255.84 433.44 348.94 407.63 349.62 399.96 360.29 280.41 361.4 268.22 369.6 176.3 255.84 176.3 255.84 221.72 319.83 221.72 315.7 268.22 255.84 268.22 255.84 313.63"
-          fill="#fff"
+          fill={background}
         />
       </g>
     </g>

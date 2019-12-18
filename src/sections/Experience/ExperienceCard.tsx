@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { formatDateStartEnd } from '../../helpers/date';
-import { styled } from '../../style/theme';
+import { styled } from '../../style/styled';
 import { IExperience } from './experience.data';
 
 interface IExperienceCardProps {
@@ -102,7 +102,7 @@ const ExperienceCardHeader = styled.a<{
   background: ${({ isEvent, theme }) =>
     isEvent ? theme.colors.accent2 : theme.colors.accent};
   color: ${({ isEvent, theme }) =>
-    isEvent ? theme.colors.fontPrimary : theme.colors.fontSecondary};
+    isEvent ? theme.colors.font : theme.colors.fontAccent};
   font-family: ${({ theme }) => theme.fonts.title};
   text-decoration: none;
 
@@ -189,8 +189,8 @@ const Tag = styled.div`
 `;
 
 const TechTag = styled(Tag)`
-  background: ${({ theme }) => theme.colors.fontPrimary};
-  color: ${({ theme }) => theme.colors.fontSecondary};
+  background: ${({ theme }) => theme.colors.accent3};
+  color: ${({ theme }) => theme.colors.fontAccent3};
 
   &:before {
     content: '# ';
@@ -200,7 +200,7 @@ const TechTag = styled(Tag)`
 
 const ContextTag = styled(Tag)`
   background: ${({ theme }) => theme.colors.accent2};
-  color: ${({ theme }) => theme.colors.fontPrimary};
+  color: ${({ theme }) => theme.colors.fontAccent2};
 
   &:before {
     content: '# ';

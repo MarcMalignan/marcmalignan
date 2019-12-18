@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { ISvgProps } from '../../../types';
 
-const Svg: FC<ISvgProps> = () => (
+const Svg: FC<ISvgProps> = ({ colors: { font } }) => (
   <svg
     fill="none"
-    stroke="#222222"
+    stroke={font}
     strokeWidth="2.3"
     version="1.1"
     viewBox="0 0 24.327 24.333"

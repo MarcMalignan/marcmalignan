@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { ISvgProps } from '../../../types';
 
-const Svg: FC<ISvgProps> = ({ color }) => (
+const Svg: FC<ISvgProps> = ({ colors: { accent, accent2, font } }) => (
   <svg viewBox="0 0 210 210" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <title>prettier-icon-light</title>
     <desc>Created with sketchtool.</desc>
@@ -12,7 +12,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
           <g id="line-11" transform="translate(0.000000, 200.000000)">
             <rect
               id="line-11-dash-3"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="150"
               y="0"
@@ -22,7 +22,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-11-dash-2"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="70"
               y="0"
@@ -32,7 +32,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-11-dash-1"
-              fill={color}
+              fill={accent}
               x="0"
               y="0"
               width="60"
@@ -43,7 +43,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
           <g id="line-10" transform="translate(0.000000, 180.000000)">
             <rect
               id="line-10-dash-5"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="160"
               y="0"
@@ -53,7 +53,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-10-dash-4"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="130"
               y="0"
@@ -63,7 +63,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-10-dash-3"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="70"
               y="0"
@@ -73,7 +73,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-10-dash-2"
-              fill="#222"
+              fill={font}
               x="40"
               y="0"
               width="20"
@@ -82,7 +82,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-10-dash-1"
-              fill={color}
+              fill={accent}
               x="0"
               y="0"
               width="30"
@@ -93,7 +93,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
           <g id="line-9" transform="translate(0.000000, 160.000000)">
             <rect
               id="line-9-dash-3"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="110"
               y="0"
@@ -103,7 +103,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-9-dash-2"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="70"
               y="0"
@@ -113,7 +113,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-9-dash-1"
-              fill="#222"
+              fill={font}
               x="0"
               y="0"
               width="60"
@@ -124,7 +124,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
           <g id="line-8" transform="translate(0.000000, 140.000000)">
             <rect
               id="line-8-dash-4"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="180"
               y="0"
@@ -134,7 +134,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-8-dash-3"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="140"
               y="0"
@@ -144,7 +144,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-8-dash-2"
-              fill="#222"
+              fill={font}
               x="30"
               y="0"
               width="100"
@@ -153,7 +153,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-8-dash-1"
-              fill="#222"
+              fill={font}
               x="0"
               y="0"
               width="20"
@@ -164,7 +164,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
           <g id="line-7" transform="translate(0.000000, 120.000000)">
             <rect
               id="line-7-dash-4"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="170"
               y="0"
@@ -174,7 +174,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-7-dash-3"
-              fill="#222"
+              fill={font}
               x="120"
               y="0"
               width="40"
@@ -183,7 +183,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-7-dash-2"
-              fill={color}
+              fill={accent}
               x="60"
               y="0"
               width="50"
@@ -192,7 +192,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-7-dash-1"
-              fill={color}
+              fill={accent}
               x="0"
               y="0"
               width="50"
@@ -203,7 +203,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
           <g id="line-6" transform="translate(0.000000, 100.000000)">
             <rect
               id="line-6-dash-4"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="180"
               y="0"
@@ -213,7 +213,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-6-dash-3"
-              fill={color}
+              fill={accent}
               x="80"
               y="0"
               width="90"
@@ -222,7 +222,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-6-dash-2"
-              fill="#222"
+              fill={font}
               x="30"
               y="0"
               width="40"
@@ -231,7 +231,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-6-dash-1"
-              fill={color}
+              fill={accent}
               x="0"
               y="0"
               width="20"
@@ -242,7 +242,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
           <g id="line-5" transform="translate(0.000000, 80.000000)">
             <rect
               id="line-5-dash-4"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="190"
               y="0"
@@ -252,7 +252,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-5-dash-3"
-              fill="#222"
+              fill={font}
               x="120"
               y="0"
               width="60"
@@ -261,7 +261,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-5-dash-2"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="70"
               y="0"
@@ -271,7 +271,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-5-dash-1"
-              fill="#222"
+              fill={font}
               x="0"
               y="0"
               width="60"
@@ -282,7 +282,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
           <g id="line-4" transform="translate(0.000000, 60.000000)">
             <rect
               id="line-4-dash-5"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="190"
               y="0"
@@ -292,7 +292,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-4-dash-4"
-              fill={color}
+              fill={accent}
               x="120"
               y="0"
               width="60"
@@ -301,7 +301,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-4-dash-3"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="70"
               y="0"
@@ -311,7 +311,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-4-dash-2"
-              fill={color}
+              fill={accent}
               x="40"
               y="0"
               width="20"
@@ -320,7 +320,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-4-dash-1"
-              fill="#222"
+              fill={font}
               x="0"
               y="0"
               width="30"
@@ -331,7 +331,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
           <g id="line-3" transform="translate(0.000000, 40.000000)">
             <rect
               id="line-3-dash-4"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="180"
               y="0"
@@ -341,7 +341,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-3-dash-3"
-              fill={color}
+              fill={accent}
               x="150"
               y="0"
               width="20"
@@ -350,7 +350,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-3-dash-2"
-              fill="#222"
+              fill={font}
               x="90"
               y="0"
               width="50"
@@ -359,7 +359,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-3-dash-1"
-              fill={color}
+              fill={accent}
               x="0"
               y="0"
               width="80"
@@ -370,7 +370,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
           <g id="line-2" transform="translate(0.000000, 20.000000)">
             <rect
               id="line-2-dash-3"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="170"
               y="0"
@@ -380,7 +380,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-2-dash-2"
-              fill="#222"
+              fill={font}
               x="50"
               y="0"
               width="110"
@@ -389,7 +389,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-2-dash-1"
-              fill={color}
+              fill={accent}
               x="0"
               y="0"
               width="40"
@@ -400,7 +400,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
           <g id="line-1">
             <rect
               id="line-1-dash-2"
-              fill="#CFD4D7"
+              fill={accent2}
               opacity="0.5"
               x="140"
               y="0"
@@ -410,7 +410,7 @@ const Svg: FC<ISvgProps> = ({ color }) => (
             />
             <rect
               id="line-1-dash-1"
-              fill={color}
+              fill={accent}
               x="0"
               y="0"
               width="130"
