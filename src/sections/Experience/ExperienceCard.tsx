@@ -150,8 +150,13 @@ const ExperienceDateDesktop = styled(ExperienceDate)`
 `;
 
 const ExperienceDateMobile = styled(ExperienceDate)`
+  display: none;
   margin-top: ${({ theme }) => theme.spacings.small};
   font-family: ${({ theme }) => theme.fonts.text};
+
+  @media (max-width: ${({ theme }) => theme.sizes.mobile}) {
+    display: block;
+  }
 `;
 
 const ExperienceCardBody = styled.div`
