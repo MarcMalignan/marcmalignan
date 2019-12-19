@@ -3,7 +3,6 @@ import { ISvgProps } from '../../../types';
 
 const Svg: FC<ISvgProps> = ({ colors: { accent, background, font } }) => (
   <svg version="1.1" viewBox="0 0 774 875.7" xmlns="http://www.w3.org/2000/svg">
-    <title>logo-on-white-bg</title>
     <path
       d="m387 0 387 218.9v437.9l-387 218.9-387-218.9v-437.9z"
       fill={background}

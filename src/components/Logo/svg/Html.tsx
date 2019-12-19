@@ -3,7 +3,6 @@ import { ISvgProps } from '../../../types';
 
 const Svg: FC<ISvgProps> = ({ colors: { accent, font, fontAccent } }) => (
   <svg version="1.1" viewBox="0 0 362.8 512" xmlns="http://www.w3.org/2000/svg">
-    <title>HTML5 Logo</title>
     <path
       d="m33.8 0h23v22.8h21.2v-22.8h23v69h-23v-23h-21v23h-23.2m97.6-46h-20.3v-23h63.7v23h-20.4v46h-23m53.5-69h24.1l14.8 24.3 14.8-24.3h24.1v69h-23v-34.2l-16.1 24.8-16.1-24.8v34.2h-22.6m89.2-69h23v46.2h32.6v22.8h-55.6"
       fill={font}

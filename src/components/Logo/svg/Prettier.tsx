@@ -3,7 +3,6 @@ import { ISvgProps } from '../../../types';
 
 const Svg: FC<ISvgProps> = ({ colors: { accent, accent2, font } }) => (
   <svg viewBox="0 0 210 210" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    <title>prettier-icon-light</title>
     <desc>Created with sketchtool.</desc>
     <defs />
     <g id="key" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
