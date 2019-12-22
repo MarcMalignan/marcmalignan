@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should match snapshot 1`] = `
+<Styled(styled.div)>
+  Marc Malignan © 2019
+</Styled(styled.div)>
+`;

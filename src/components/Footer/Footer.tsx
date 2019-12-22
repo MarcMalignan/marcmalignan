@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { styled } from '../style/styled';
-import { ContentWidth } from './commons';
+import { styled } from '../../style/styled';
+import { ContentWidth } from '../commons';
 
 export const Footer: FC<{}> = () => (
   <FooterContainer>Marc Malignan © 2019</FooterContainer>
