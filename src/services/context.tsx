@@ -11,12 +11,16 @@ export interface IAppContext {
   setDarkMode: (bool: boolean) => void;
 }
 
+const isOsDarkMode = () =>
+  window.matchMedia &&
+  window.matchMedia('(prefers-color-scheme: dark)').matches;
+
 const defaultContext: IAppContext = {
   currentNav: NAV_ITEMS[0],
   setCurrentNav: () => {},
   scrollContainer: null,
   setScrollContainer: () => {},
-  darkMode: false,
+  darkMode: isOsDarkMode(),
   setDarkMode: () => {},
 };
 
