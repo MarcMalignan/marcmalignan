@@ -36,7 +36,7 @@ const getVisibleSectionId = () => {
   const windowHeight = window.innerHeight;
   const sections = document.getElementsByClassName('section');
 
-  const visibleSections = Array.from(sections).filter(section => {
+  const visibleSections = Array.from(sections).filter((section) => {
     const title = section.getElementsByTagName('h2')[0];
     const rect = title.getBoundingClientRect();
     return rect.top < windowHeight;

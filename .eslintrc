@@ -5,6 +5,9 @@
     "jest": true
   },
   "extends": ["airbnb-typescript"],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "rules": {
     "@typescript-eslint/no-use-before-define": 0,
     "arrow-parens": 0,
