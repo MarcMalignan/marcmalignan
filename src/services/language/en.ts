@@ -43,6 +43,8 @@ export const enTranslations = {
         'As for my training, I followed a classical engineering curriculum at the parisian <i>ECE</i> school, before finishing my studies at the english <i>Staffordshire University</i> where I could focus fully on development.',
       ],
       descriptions: {
+        sezane: 'Redesign for both websites / back-office app',
+        hubside: 'eShop module for Hubside website creation',
         marc: 'Personal project: redesign of my website',
         meetic: 'Web/native matchmaking app',
         rf: "Redesign of the journalists' back-office",

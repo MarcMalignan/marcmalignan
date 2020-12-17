@@ -35,11 +35,19 @@ export const Experience: FC<{}> = () => {
   );
 };
 
-const renderTimelineItem = (experience: IExperience, index: number) => (
-  <ExperienceWrapper key={experience.id} isEvent={!experience.startDate}>
-    <ExperienceCard experience={experience} index={index} />
-  </ExperienceWrapper>
-);
+const renderTimelineItem = (experience: IExperience, index: number) => {
+  const isEvent = !experience.startDate;
+
+  return (
+    <>
+      <ExperienceWrapper key={experience.id} isEvent={isEvent}>
+        <ExperienceCard experience={experience} index={index} />
+      </ExperienceWrapper>
+      {/* empty div to not mess up the 2n style */}
+      {isEvent && <div />}
+    </>
+  );
+};
 
 const Timeline = styled.div`
   position: relative;

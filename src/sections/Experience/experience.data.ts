@@ -10,21 +10,45 @@ export interface IExperience {
 }
 
 export const experienceData: IExperience[] = [
-  /* {
+  {
+    id: 'sezane',
+    title: 'Sézane / Octobre',
+    link: 'https://www.sezane.com/',
+    techTags: ['TypeScript', 'React', 'Redux', 'Jest', 'ESLint', 'Webpack'],
+    contextTags: ['rework', 'public', 'backOffice', 'uxui'],
+    startDate: '2020-09-01',
+  },
+  {
+    id: 'sezane-separator',
+    title: 'Sézane',
+    link: 'https://www.sezane.com/',
+  },
+  {
     id: 'hubside',
     title: 'Hubside',
     link: 'https://www.hubside.com/',
+    techTags: [
+      'TypeScript',
+      'React',
+      'Redux',
+      'Sass',
+      'Jest',
+      'ESLint',
+      'Webpack',
+    ],
+    contextTags: ['fromScratch', 'public'],
     startDate: '2019-11-01',
-  }, */
-  {
-    id: 'marc',
-    title: 'MarcMalignan.com',
-    link: 'https://github.com/MarcMalignan/marcmalignan',
-    techTags: ['TypeScript', 'React', 'Styled-components', 'ESLint', 'Webpack'],
-    contextTags: ['fromScratch', 'public', 'uxui'],
-    startDate: '2019-11-01',
-    endDate: '2019-11-01',
+    endDate: '2020-09-01',
   },
+  // {
+  //   id: 'marc',
+  //   title: 'MarcMalignan.com',
+  //   link: 'https://github.com/MarcMalignan/marcmalignan',
+  //   techTags: ['TypeScript', 'React', 'Styled-components', 'ESLint', 'Webpack'],
+  //   contextTags: ['fromScratch', 'public', 'uxui'],
+  //   startDate: '2019-11-01',
+  //   endDate: '2019-11-01',
+  // },
   {
     id: 'meetic',
     title: 'Meetic',

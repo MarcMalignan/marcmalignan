@@ -43,6 +43,8 @@ export const frTranslations = {
         "Côté formation j'ai suivi un cursus classique d'école d'ingénieur à l'<i>ECE Paris</i> avant de terminer mes études dans l'université anglaise de <i>Staffordshire</i> où j'ai pu me focaliser pleinement sur le développement.",
       ],
       descriptions: {
+        sezane: 'Refonte des deux sites marchands / du back-office',
+        hubside: 'Module eShop pour la création de site Hubside',
         marc: 'Projet personnel\n: refonte de mon site',
         meetic: 'Application web/native de matchmaking',
         rf: 'Refonte du back-office des journalistes',
